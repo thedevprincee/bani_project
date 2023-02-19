@@ -27,7 +27,6 @@ const Auth = () => {
     } else {
       setPwState(true);
     }
-    console.log(pwState);
   };
 
   return (
