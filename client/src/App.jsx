@@ -1,10 +1,13 @@
+import AppWrapper from "./App.styles";
+import Dashboard from "./components/pages/dashboard/Dashboard";
 
-const App = ()=> {
+const App = () => {
   return (
-    <div className="App">
-     Bani
-    </div>
-  )
-}
+    <>
+      <AppWrapper />
+      <Dashboard />
+    </>
+  );
+};
 
-export default App
+export default App;
