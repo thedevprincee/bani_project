@@ -1,13 +1,14 @@
 import styled from "styled-components"
 
 const BreadcrumbWrapper = styled.div`
-    border: 1px solid red;
-    height: 100%;
+    padding: 0 24px;
+    margin-top: 5px;
+    /* height: 100%; */
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    overflow: scroll;
+    overflow: auto;
     white-space: nowrap;
     @media screen and (min-width:990px) {
         justify-content: space-between;
@@ -15,10 +16,10 @@ const BreadcrumbWrapper = styled.div`
 `
 
 export const CrumbTitle = styled.div`
-    border: 1px solid black;
-    width: auto;
+    width: 400px;
+    padding: 0 5px;
     @media screen and (min-width:990px) {
-
+        width: 50%;
     }
 `
 
@@ -26,9 +27,9 @@ export const CrumbButtonSection = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* width: 50%; */
-    border: 1px solid red;
+    width: 400px;
     @media screen and (min-width:990px) {
+        width: 50%;
         justify-content: flex-end;
     }
 `

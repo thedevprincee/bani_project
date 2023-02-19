@@ -7,7 +7,7 @@ const Breadcrumb = () => {
   return (
     <BreadcrumbWrapper>
       <CrumbTitle>
-        <Text type="h2">Virtual Account Dashboard</Text>
+        <Text type="h3">Virtual Account Dashboard</Text>
       </CrumbTitle>
       <CrumbButtonSection>
         <Button>Create New Branch</Button>
