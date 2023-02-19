@@ -39,7 +39,7 @@ export const MainWrapper = styled.div`
     flex-direction: column;
 `
 
-export const Breadcrumb = styled.div`
+export const BreadcrumbLayout = styled.div`
     width: 100%;
     height: 10vh;
     overflow: hidden;

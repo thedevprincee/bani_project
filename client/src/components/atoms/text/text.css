@@ -1,0 +1,43 @@
+.text-danger{
+    color: #f00;
+}
+
+.text-warning{
+    color: rgb(242, 144, 8);
+}
+
+.text-success{
+    color: #0f0;
+}
+
+.text-green{
+    color: rgb(6, 195, 6);
+}
+
+.text-info{
+    color: #00f;
+}
+
+.text-white{
+    color: #fff;
+}
+
+.text-black{
+    color: #000;
+}
+
+.font-bold{
+    font-weight: bold;
+}
+
+.font-bolder{
+    font-weight: bolder;
+}
+
+.font-lighter{
+    font-weight: lighter;
+}
+
+.text-center{
+    text-align: center;
+}
