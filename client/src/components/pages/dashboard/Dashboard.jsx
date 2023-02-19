@@ -12,6 +12,8 @@ import {
     AccountLayout,
     FeedLayout
  } from './Dashboard.style'
+import Overview from '../../molecules/overview/Overview'
+import VirtualAccount from '../../elements/virtual/VirtualAccount'
 
 
 const Dashboard = () => {
@@ -30,7 +32,8 @@ const Dashboard = () => {
             </BreadcrumbLayout>
             <ContentWrapper>
                 <AccountLayout>
-                    <Skeleton type="thumbnail" children="Accoun Layout" />
+                    <Overview />
+                    <VirtualAccount />
                 </AccountLayout>
                 <FeedLayout>
                     <Skeleton type="thumbnail"  children="Activities  Feed" />
