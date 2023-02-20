@@ -29,7 +29,7 @@ const Dashboard = () => {
             </Breadcrumb>
             <ContentWrapper>
                 <AccountLayout>
-                    <Skeleton type="thumbnail" children="Accoun Layout" />
+                    <Skeleton type="thumbnail" children="Account Layout" />
                 </AccountLayout>
                 <FeedLayout>
                     <Skeleton type="thumbnail"  children="Activities  Feed" />
