@@ -8,6 +8,7 @@ import {
     BrandBg, 
     DynamicBranch, 
     DynamicText, 
+    HeadingFive, 
     InflowColumn, 
     InflowColumnSmall, 
     InflowWrapper, 
@@ -37,16 +38,16 @@ function Activities() {
         <BankWrapper>
             <BankDetails>
                 <Text type='h5'>
-                    First Bank                    
+                    Polaris Bank Limited                   
                 </Text>
                 <Text type='p'>
                     3155043807
                 </Text>
             </BankDetails>
             <StyledButton>
-                <Text>
+                <HeadingFive>
                     Go to Account View 
-                </Text>
+                </HeadingFive>
                 <FaChevronRight/>
             </StyledButton>
         </BankWrapper>
