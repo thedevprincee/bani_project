@@ -28,12 +28,19 @@ export const BodyWrapper = styled.div`
     }
 `
 export const SidebarLayout = styled.div`
-    display: flex;
-    height: auto;
+
+    background-color:white;
+    padding:20px 24px;
+    height: 95vh;
+    width: 15vw;
+    @media screen and (max-width:576px)  {
+    padding-top: 28px;
+    align-items: center;
+    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    height: 40%;
     width: 100vw;
-    @media screen and (min-width:990px)  {
-        height: 90vh;
-        width: 15vw;
     }
 `
 export const MainWrapper = styled.div`
