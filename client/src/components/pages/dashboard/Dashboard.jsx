@@ -1,16 +1,19 @@
 import React from 'react'
 import Skeleton from '../../atoms/skeleton/Skeleton'
 import DashboadWrapper from './Dashboard.style'
+import Breadcrumb from '../../molecules/breadcrumb/Breadcrumb'
 import { 
     HeaderWrapper, 
     BodyWrapper, 
     SidebarLayout, 
     MainWrapper, 
-    Breadcrumb,
+    BreadcrumbLayout,
     ContentWrapper,
     AccountLayout,
     FeedLayout
  } from './Dashboard.style'
+import Overview from '../../molecules/overview/Overview'
+import VirtualAccount from '../../elements/virtual/VirtualAccount'
 
 
 const Dashboard = () => {
@@ -24,9 +27,9 @@ const Dashboard = () => {
           <Skeleton type="thumbnail" children="SideBar" />
         </SidebarLayout>
         <MainWrapper>
-            <Breadcrumb>
-                 <Skeleton type="thumbnail"  children="BreadCrumb"  />
-            </Breadcrumb>
+            <BreadcrumbLayout>
+                 <Breadcrumb />
+            </BreadcrumbLayout>
             <ContentWrapper>
                 <AccountLayout>
                     <Skeleton type="thumbnail" children="Accoun Layout" />
