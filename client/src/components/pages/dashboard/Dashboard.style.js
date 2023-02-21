@@ -86,4 +86,5 @@ export const FeedLayout = styled.div`
         height: 100%;
     }
 `
+
 export default DashboadWrapper
