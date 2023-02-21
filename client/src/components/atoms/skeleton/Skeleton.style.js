@@ -7,7 +7,7 @@ const SkeletonWrapper =  styled.div`
     background-color: #ddd;
     border: 1px solid;
     box-sizing: border-box;
-    margin: 5px;
+    /* margin: 5px; */
     border-radius: 5px;
     width: 90%;
     height: 98%;

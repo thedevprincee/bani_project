@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const DashboadWrapper = styled.div`
-    width: 100vw;
+    /* width: 100vw; */
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -11,9 +11,10 @@ const DashboadWrapper = styled.div`
 `
 
 export const HeaderWrapper = styled.div`
-    width: 100vw;
+    width: 100%;
     height: 8vh;
     z-index: 2;
+    padding: 8px 24px;
 `
 export const BodyWrapper = styled.div`
     width: 100%;
@@ -39,6 +40,7 @@ export const SidebarLayout = styled.div`
 export const MainWrapper = styled.div`
     width: 100%;
     height: 90vh;
+    padding: 8px 24px;
     display: flex;
     flex-direction: column;
 `
