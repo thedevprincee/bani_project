@@ -35,6 +35,7 @@ export const TRow = styled.tr`
     &:hover{
         background-color: #ccc;
     }
+    
 `
 
 export const TData = styled.td`
