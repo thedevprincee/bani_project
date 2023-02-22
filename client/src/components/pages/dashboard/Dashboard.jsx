@@ -14,13 +14,15 @@ import {
  } from './Dashboard.style'
 import Overview from '../../molecules/overview/Overview'
 import VirtualAccount from '../../elements/virtual/VirtualAccount'
+import Nav from '../../elements/nav/Nav'
 
 
 const Dashboard = () => {
   return (
     <DashboadWrapper>
       <HeaderWrapper>
-         <Skeleton type="thumbnail"  children="Header Nav" />
+        <Nav />
+         {/* <Skeleton type="thumbnail"  children="Header Nav" /> */}
       </HeaderWrapper>
       <BodyWrapper>
         <SidebarLayout>
