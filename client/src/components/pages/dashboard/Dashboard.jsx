@@ -14,6 +14,9 @@ import {
  } from './Dashboard.style'
 import Overview from '../../molecules/overview/Overview'
 import VirtualAccount from '../../elements/virtual/VirtualAccount'
+
+import Activities from '../../organisms/Activities/Activities'
+
 import Nav from '../../elements/nav/Nav'
 
 
@@ -38,7 +41,8 @@ const Dashboard = () => {
                     <VirtualAccount />
                 </AccountLayout>
                 <FeedLayout>
-                    <Skeleton type="thumbnail"  children="Activities  Feed" />
+                    {/* <Skeleton type="thumbnail"  children="Activities  Feed" /> */}
+                    <Activities/>
                 </FeedLayout>
             </ContentWrapper>
         </MainWrapper>
