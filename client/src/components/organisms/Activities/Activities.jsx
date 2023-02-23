@@ -18,6 +18,7 @@ import {
 import Text from '../../atoms/text/Text'
 import {FaChevronRight, FaDatabase} from 'react-icons/fa'
 import Table from "../../molecules/Table/Table"
+import { ChainIcon } from "../../../assets/Icons"
 function Activities() {
   return (
     <ActivityFeedWrapper>
@@ -73,7 +74,7 @@ function Activities() {
                     Linked Branch
                 </InflowColumnSmall>
                 <DynamicBranch>
-                   <FaDatabase/> <Text>Dodo-Ikeja</Text>
+                   <ChainIcon/> <Text>Dodo-Ikeja</Text>
                 </DynamicBranch>
             </InflowColumn>
         </InflowWrapper>

@@ -66,7 +66,10 @@ export const InflowWrapper = styled.section`
     padding: 8px 24px;
 `
 export const InflowColumn = styled.div`
-
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    justify-content: center;
 `
 export const InflowColumnSmall = styled.p`
     color: rgb(117, 117, 117);
@@ -75,7 +78,15 @@ export const InflowColumnSmall = styled.p`
     margin: 0px 0px 6px;
 `
 export const DynamicBranch = styled.div`
+    align-items: center;
     background-color: #feefef;
+    display: flex;
+    font-size: 0.7rem;
+    /* justify-content: space-between; */
+    /* padding: 8px; */
+    &:first-child{
+        margin-left: 10px;
+    }
 `
 
 
