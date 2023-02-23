@@ -27,21 +27,17 @@ export const BodyWrapper = styled.div`
         flex-direction: row;
     }
 `
-export const SidebarLayout = styled.div`
+export const SidebarLayout = styled.section`
 
     background-color:white;
     padding:20px 24px;
     height: 95vh;
     width: 15vw;
     @media screen and (max-width:576px)  {
-    padding-top: 28px;
-    align-items: center;
-    justify-content: space-evenly;
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    height: 40%;
-    width: 100vw;
-    }
+        padding-top: 28px;
+        width: 100vw;
+        height:40%;
+        }
 `
 export const MainWrapper = styled.div`
     width: 100%;
