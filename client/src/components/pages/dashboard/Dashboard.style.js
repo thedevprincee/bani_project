@@ -34,7 +34,7 @@ export const SidebarLayout = styled.div`
     width: 100vw;
     @media screen and (min-width:990px)  {
         height: 90vh;
-        width: 15vw;
+        width: 15%;
     }
 `
 export const MainWrapper = styled.div`
@@ -68,6 +68,7 @@ export const ContentWrapper = styled.div`
     flex-direction: column;
     @media screen and (min-width:990px)  {
         flex-direction: row;
+        justify-content: space-between;
     }
 `
 
@@ -75,7 +76,7 @@ export const AccountLayout = styled.div`
     width: 100%;
     height: auto;
     @media screen and (min-width:990px)  {
-        width: 70%;
+        width: 69%;
         height: 100%;
     }
 `
@@ -84,7 +85,7 @@ export const FeedLayout = styled.div`
     width: 100%;
     height: auto;
     @media screen and (min-width:990px)  {
-        width: 30%;
+        width: 29%;
         height: 100%;
     }
 `
