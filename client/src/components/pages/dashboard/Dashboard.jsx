@@ -14,14 +14,18 @@ import {
  } from './Dashboard.style'
 import Overview from '../../molecules/overview/Overview'
 import VirtualAccount from '../../elements/virtual/VirtualAccount'
+
 import Activities from '../../organisms/Activities/Activities'
+
+import Nav from '../../elements/nav/Nav'
 
 
 const Dashboard = () => {
   return (
     <DashboadWrapper>
       <HeaderWrapper>
-         <Skeleton type="thumbnail"  children="Header Nav" />
+        <Nav />
+         {/* <Skeleton type="thumbnail"  children="Header Nav" /> */}
       </HeaderWrapper>
       <BodyWrapper>
         <SidebarLayout>
@@ -33,7 +37,8 @@ const Dashboard = () => {
             </BreadcrumbLayout>
             <ContentWrapper>
                 <AccountLayout>
-                    <Skeleton type="thumbnail" children="Accoun Layout" />
+                    <Overview />
+                    <VirtualAccount />
                 </AccountLayout>
                 <FeedLayout>
                     {/* <Skeleton type="thumbnail"  children="Activities  Feed" /> */}
