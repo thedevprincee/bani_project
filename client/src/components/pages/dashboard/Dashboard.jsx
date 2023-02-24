@@ -16,28 +16,38 @@ import Overview from "../../molecules/overview/Overview";
 import VirtualAccount from "../../elements/virtual/VirtualAccount";
 import SideBarMenuSection from "../../molecules/sideBarMenuSection/SideBarMenuSection";
 
+import Activities from '../../organisms/Activities/Activities'
+
+import Nav from '../../elements/nav/Nav'
+
+
+
 const Dashboard = () => {
   return (
     <DashboadWrapper>
       <HeaderWrapper>
-        <Skeleton type="thumbnail" children="Header Nav" />
+        <Nav />
+         {/* <Skeleton type="thumbnail"  children="Header Nav" /> */}
       </HeaderWrapper>
       <BodyWrapper>
         <SidebarLayout>
           <SideBarMenuSection />
         </SidebarLayout>
         <MainWrapper>
-          <BreadcrumbLayout>
-            <Breadcrumb />
-          </BreadcrumbLayout>
-          <ContentWrapper>
-            <AccountLayout>
-              <Skeleton type="thumbnail" children="Accoun Layout" />
-            </AccountLayout>
-            <FeedLayout>
-              <Skeleton type="thumbnail" children="Activities  Feed" />
-            </FeedLayout>
-          </ContentWrapper>
+            <BreadcrumbLayout>
+                 <Breadcrumb />
+            </BreadcrumbLayout>
+            <ContentWrapper>
+                <AccountLayout>
+                    <Overview />
+                    <VirtualAccount />
+                </AccountLayout>
+                <FeedLayout>
+                    {/* <Skeleton type="thumbnail"  children="Activities  Feed" /> */}
+                    <Activities/>
+                </FeedLayout>
+            </ContentWrapper>
+
         </MainWrapper>
       </BodyWrapper>
     </DashboadWrapper>
