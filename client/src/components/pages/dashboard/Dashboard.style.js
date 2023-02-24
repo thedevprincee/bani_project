@@ -13,8 +13,7 @@ const DashboadWrapper = styled.div`
 export const HeaderWrapper = styled.div`
     width: 100%;
     height: 8vh;
-    z-index: 2;
-    padding: 8px 24px;
+    /* z-index: 2; */
 `
 export const BodyWrapper = styled.div`
     width: 100%;
@@ -33,14 +32,14 @@ export const SidebarLayout = styled.section`
 
     background-color:white;
     padding:20px 24px;
-    height: 95vh;
+    height: 92vh;
     width: 15vw;
     @media screen and (max-width:576px)  {
         padding-top: 28px;
         width: 100vw;
         height:40%;
         }
-
+`
 export const MainWrapper = styled.div`
     width: 100%;
     height: 90vh;
@@ -64,7 +63,6 @@ export const BreadcrumbLayout = styled.div`
 
     }
 `
-
 export const ContentWrapper = styled.div`
     width: 100%;
     height: 100%;
@@ -88,9 +86,12 @@ export const AccountLayout = styled.div`
 export const FeedLayout = styled.div`
     width: 100%;
     height: auto;
+    background-color: #fff;
+    border-radius: 8px;
     @media screen and (min-width:990px)  {
-        width: 29%;
+        width: 30%;
         height: 100%;
+        /* background-color: black; */
     }
 `
 

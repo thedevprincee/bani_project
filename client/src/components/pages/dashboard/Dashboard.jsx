@@ -43,7 +43,6 @@ const Dashboard = () => {
                     <VirtualAccount />
                 </AccountLayout>
                 <FeedLayout>
-                    {/* <Skeleton type="thumbnail"  children="Activities  Feed" /> */}
                     <Activities/>
                 </FeedLayout>
             </ContentWrapper>

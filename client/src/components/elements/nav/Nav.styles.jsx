@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const NavWrapper = styled.div`
-    width:100vw;
+    /* width:100vw; */
     display: flex;
     justify-content: space-between;
     align-items: center;

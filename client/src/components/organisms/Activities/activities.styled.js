@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const ActivityFeedWrapper = styled.section`
-    background-color: #fff;
-    border-radius: 8px;
-    height: 100%;
+    
+    /* height: 100%; */
 `
 export const ActivityHeader = styled.div`
     align-items: flex-end;
