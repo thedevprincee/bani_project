@@ -6,6 +6,7 @@ import {
   BottomLinks,
   SidebarCont,
   BottomLinksMob,
+  PaymentDiv,
 } from "./SideBarMenuSection.style";
 import welcome from "../../../assets/welcome.svg";
 import Compliance from "../../../assets/Compliance.svg";
@@ -28,20 +29,20 @@ const SideBarMenuSection = () => {
           <SideBarMenuItems pText="Welcome" svgSrc={welcome} />
           <SideBarMenuItems pText="Compliance" svgSrc={Compliance} />
           <SideBarMenuItems pText="Overview" svgSrc={Overview} />
-          <BottomLinksMob>
+          {/* <BottomLinksMob>
             <SideBarMenuItems pText="Live mode" svgSrc={Livemode} />
-          </BottomLinksMob>
+          </BottomLinksMob> */}
         </div>
         <div>
           <MenuSectionHead>Business</MenuSectionHead>
           <SideBarMenuItems pText="Products" svgSrc={Products} />
           <SideBarMenuItems pText="Customers" svgSrc={Customers} />
           <SideBarMenuItems pText="Orders" svgSrc={Orders} />
-          <BottomLinksMob>
+          {/* <BottomLinksMob>
             <SideBarMenuItems pText="Settings" svgSrc={Settings} />
-          </BottomLinksMob>
+          </BottomLinksMob> */}
         </div>
-        <div>
+        <PaymentDiv>
           <MenuSectionHead>Payment</MenuSectionHead>
           <SideBarMenuItems pText="Wallets" svgSrc={Wallets} />
           <SideBarMenuItems pText="Transactions" svgSrc={Transactions} />
@@ -52,16 +53,18 @@ const SideBarMenuSection = () => {
               svgSrc={VirtualAccount}
             />
           </BreakTxt>
-          <BottomLinksMob>
-            <SideBarMenuItems pText="Audit logs" svgSrc={Auditlogs} />
-          </BottomLinksMob>
-        </div>
+        </PaymentDiv>
         <BottomLinks>
           <SideBarMenuItems pText="Live mode" svgSrc={Livemode} />
           <SideBarMenuItems pText="Settings" svgSrc={Settings} />
           <SideBarMenuItems pText="Audit logs" svgSrc={Auditlogs} />
         </BottomLinks>
       </SidebarCont>
+      <BottomLinksMob>
+        <SideBarMenuItems pText="Live mode" svgSrc={Livemode} />
+        <SideBarMenuItems pText="Settings" svgSrc={Settings} />
+        <SideBarMenuItems pText="Audit logs" svgSrc={Auditlogs} />
+      </BottomLinksMob>
     </>
   );
 };

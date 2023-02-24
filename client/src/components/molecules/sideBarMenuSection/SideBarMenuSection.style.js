@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 export const SidebarCont =styled.div`
     @media screen and (max-width:576px)  {
-        padding-top: 28px;
+        padding-top: 0;
         align-items: center;
         justify-content: space-evenly;
         display: grid;
@@ -47,11 +47,20 @@ export const BottomLinks =styled.div`
 `
 export const BottomLinksMob =styled.div`
         display:none;
-        width:97%;
-        margin:0;
+        width:100%;
+        margin:10px  0 0 9px;
    @media screen and (max-width: 576px) {
-        display:block;
+        display:flex;
+        justify-content:space-between;
         
     }
+    `
+export const PaymentDiv =styled.div`
+        
+   @media screen and (max-width: 576px) {
+       margin-top:14px;
+        
+    }
+    
 
 `
