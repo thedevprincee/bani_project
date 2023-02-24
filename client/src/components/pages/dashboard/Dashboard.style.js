@@ -8,13 +8,14 @@ const DashboadWrapper = styled.div`
     align-items: flex-start;
     justify-content: flex-start;
     position: relative;
+    overflow-y:hidden;
 `
 
 export const HeaderWrapper = styled.div`
     width: 100%;
-    height: 8vh;
     z-index: 2;
-    padding: 8px 24px;
+  border-bottom: 1.5px solid rgb(222, 222, 227);
+    padding: 8px 24px 14px 0px;
 `
 export const BodyWrapper = styled.div`
     width: 100%;
@@ -23,6 +24,7 @@ export const BodyWrapper = styled.div`
     flex-direction: column;
     position: relative;
     background-color: #F5F6FA;
+    overflow-y:scroll;
     @media screen and (min-width:990px)  {
         height: 100%;
         flex-direction: row;
@@ -36,11 +38,11 @@ export const SidebarLayout = styled.section`
     height: 95vh;
     width: 15vw;
     @media screen and (max-width:576px)  {
-        padding-top: 28px;
+        padding: 14px 15px 28px 15px;
         width: 100vw;
         height:40%;
         }
-
+`
 export const MainWrapper = styled.div`
     width: 100%;
     height: 90vh;
