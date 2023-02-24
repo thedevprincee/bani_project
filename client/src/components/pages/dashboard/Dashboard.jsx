@@ -1,23 +1,25 @@
-import React from 'react'
-import Skeleton from '../../atoms/skeleton/Skeleton'
-import DashboadWrapper from './Dashboard.style'
-import Breadcrumb from '../../molecules/breadcrumb/Breadcrumb'
-import { 
-    HeaderWrapper, 
-    BodyWrapper, 
-    SidebarLayout, 
-    MainWrapper, 
-    BreadcrumbLayout,
-    ContentWrapper,
-    AccountLayout,
-    FeedLayout
- } from './Dashboard.style'
-import Overview from '../../molecules/overview/Overview'
-import VirtualAccount from '../../elements/virtual/VirtualAccount'
+import React from "react";
+import Skeleton from "../../atoms/skeleton/Skeleton";
+import DashboadWrapper from "./Dashboard.style";
+import Breadcrumb from "../../molecules/breadcrumb/Breadcrumb";
+import {
+  HeaderWrapper,
+  BodyWrapper,
+  SidebarLayout,
+  MainWrapper,
+  BreadcrumbLayout,
+  ContentWrapper,
+  AccountLayout,
+  FeedLayout,
+} from "./Dashboard.style";
+import Overview from "../../molecules/overview/Overview";
+import VirtualAccount from "../../elements/virtual/VirtualAccount";
+import SideBarMenuSection from "../../molecules/sideBarMenuSection/SideBarMenuSection";
 
 import Activities from '../../organisms/Activities/Activities'
 
 import Nav from '../../elements/nav/Nav'
+
 
 
 const Dashboard = () => {
@@ -29,7 +31,7 @@ const Dashboard = () => {
       </HeaderWrapper>
       <BodyWrapper>
         <SidebarLayout>
-          <Skeleton type="thumbnail" children="SideBar" />
+          <SideBarMenuSection />
         </SidebarLayout>
         <MainWrapper>
             <BreadcrumbLayout>
@@ -45,10 +47,11 @@ const Dashboard = () => {
                     <Activities/>
                 </FeedLayout>
             </ContentWrapper>
+
         </MainWrapper>
       </BodyWrapper>
     </DashboadWrapper>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

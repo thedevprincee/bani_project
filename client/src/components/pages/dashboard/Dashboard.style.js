@@ -28,15 +28,19 @@ export const BodyWrapper = styled.div`
         flex-direction: row;
     }
 `
-export const SidebarLayout = styled.div`
-    display: flex;
-    height: auto;
-    width: 100vw;
-    @media screen and (min-width:990px)  {
-        height: 90vh;
-        width: 15%;
-    }
-`
+
+export const SidebarLayout = styled.section`
+
+    background-color:white;
+    padding:20px 24px;
+    height: 95vh;
+    width: 15vw;
+    @media screen and (max-width:576px)  {
+        padding-top: 28px;
+        width: 100vw;
+        height:40%;
+        }
+
 export const MainWrapper = styled.div`
     width: 100%;
     height: 90vh;
