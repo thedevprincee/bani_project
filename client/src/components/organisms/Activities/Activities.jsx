@@ -80,8 +80,8 @@ function Activities() {
                 </DynamicBranch>
             </InflowColumn>
         </InflowWrapper>
-        {/* <Table/> */}
-        <AccountList/>
+        <Table/>
+        {/* <AccountList/> */}
     </ActivityFeedWrapper>
   )
 }

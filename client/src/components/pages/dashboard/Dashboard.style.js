@@ -8,7 +8,12 @@ const DashboadWrapper = styled.div`
     align-items: flex-start;
     justify-content: flex-start;
     position: relative;
-    overflow-y:hidden;
+    overflow: hidden scroll;
+    @media screen and (min-width: 990px) {
+        overflow:hidden;
+        
+    }
+    
 `
 
 export const HeaderWrapper = styled.div`
@@ -24,7 +29,7 @@ export const BodyWrapper = styled.div`
     flex-direction: column;
     position: relative;
     background-color: #F5F6FA;
-    overflow-y:scroll;
+    /* overflow-y:scroll; */
     @media screen and (min-width:990px)  {
         height: 100%;
         flex-direction: row;

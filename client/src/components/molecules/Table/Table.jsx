@@ -28,11 +28,10 @@ function Table() {
                     </TableHeader>
                 <TableBody>
                 {
-                        [...Array(6).keys()].map(i => {
-                                return <TableContent key={i}/>
-                        })
+                    [...Array(14).keys()].map(i => {
+                        return <TableContent key={i}/>
+                    })
                 } 
-                
                 </TableBody>
         </TableWrapper>
     </ScrollableWrapper>
