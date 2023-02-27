@@ -18,6 +18,7 @@ const DashboadWrapper = styled.div`
 export const HeaderWrapper = styled.div`
     width: 100%;
     height: 8vh;
+    border-bottom:1.5px solid rgb(222, 222, 227);
     /* z-index: 2; */
 
 `

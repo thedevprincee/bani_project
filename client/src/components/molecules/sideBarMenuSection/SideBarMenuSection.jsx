@@ -29,18 +29,12 @@ const SideBarMenuSection = () => {
           <SideBarMenuItems pText="Welcome" svgSrc={welcome} />
           <SideBarMenuItems pText="Compliance" svgSrc={Compliance} />
           <SideBarMenuItems pText="Overview" svgSrc={Overview} />
-          {/* <BottomLinksMob>
-            <SideBarMenuItems pText="Live mode" svgSrc={Livemode} />
-          </BottomLinksMob> */}
         </div>
         <div>
           <MenuSectionHead>Business</MenuSectionHead>
           <SideBarMenuItems pText="Products" svgSrc={Products} />
           <SideBarMenuItems pText="Customers" svgSrc={Customers} />
           <SideBarMenuItems pText="Orders" svgSrc={Orders} />
-          {/* <BottomLinksMob>
-            <SideBarMenuItems pText="Settings" svgSrc={Settings} />
-          </BottomLinksMob> */}
         </div>
         <PaymentDiv>
           <MenuSectionHead>Payment</MenuSectionHead>
