@@ -1,3 +1,0 @@
-export const ChainIcon = ()=>{
-    return <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.333 4.633v6.734a1.667 1.667 0 0 0-1.967 1.967H4.634a1.667 1.667 0 0 0-1.967-1.967V4.633a1.667 1.667 0 0 0 1.967-1.967h6.734a1.667 1.667 0 0 0 1.967 1.967Z" stroke="#65717C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.667 3a1.667 1.667 0 1 1-3.335-.001A1.667 1.667 0 0 1 4.667 3ZM14.667 3a1.667 1.667 0 1 1-3.334 0 1.667 1.667 0 0 1 3.334 0ZM4.667 13a1.667 1.667 0 1 1-3.333 0 1.667 1.667 0 0 1 3.333 0ZM14.667 13a1.667 1.667 0 1 1-3.335-.001 1.667 1.667 0 0 1 3.335.001Z" stroke="#65717C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-}

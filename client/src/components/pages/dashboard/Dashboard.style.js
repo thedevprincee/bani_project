@@ -15,7 +15,6 @@ const DashboadWrapper = styled.div`
     }
     
 `
-
 export const HeaderWrapper = styled.div`
     width: 100%;
     height: 8vh;

@@ -12,12 +12,13 @@ import {
     InflowColumn, 
     InflowColumnSmall, 
     InflowWrapper, 
-    StyledButton, 
+    StyledButton,
+    ChainIcon 
     
 } from "./activities.styled"
 import Text from '../../atoms/text/Text'
 import {FaChevronRight} from 'react-icons/fa'
-import { ChainIcon } from "../../../assets/Icons"
+import  chainIcon  from "../../../assets/Icons.svg"
 import AccountList from "../../molecules/AccountList/AccountList"
 function Activities() {
   return (
@@ -74,7 +75,7 @@ function Activities() {
                     Linked Branch
                 </InflowColumnSmall>
                 <DynamicBranch>
-                   <ChainIcon/> <Text>Dodo-Ikeja</Text>
+                   <ChainIcon src={chainIcon} alt="Chain Icon" /> <Text>Dodo-Ikeja</Text>
                 </DynamicBranch>
             </InflowColumn>
         </InflowWrapper>

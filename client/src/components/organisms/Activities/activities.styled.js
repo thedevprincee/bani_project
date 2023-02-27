@@ -87,6 +87,8 @@ export const DynamicBranch = styled.div`
         margin-left: 10px;
     }
 `
-
+export const ChainIcon = styled.img`
+    margin-right: 10px;
+`
 
 
