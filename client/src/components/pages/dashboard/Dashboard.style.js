@@ -48,9 +48,9 @@ export const SidebarLayout = styled.section`
         }
 `
 export const MainWrapper = styled.div`
-    width: 85vw;
     height: 90vh;
     padding: 8px 24px;
+    width: 85vw;
     display: flex;
     flex-direction: column;
 `
