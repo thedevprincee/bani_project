@@ -25,7 +25,6 @@ const Dashboard = () => {
     <DashboadWrapper>
       <HeaderWrapper>
         <Nav />
-        {/* <Skeleton type="thumbnail"  children="Header Nav" /> */}
       </HeaderWrapper>
       <BodyWrapper>
         <SidebarLayout>
