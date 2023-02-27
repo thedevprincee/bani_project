@@ -28,7 +28,6 @@ export const BodyWrapper = styled.div`
     flex-direction: column;
     position: relative;
     background-color: #F5F6FA;
-    /* overflow-y:scroll; */
     @media screen and (min-width:990px)  {
         height: 100%;
         flex-direction: row;
@@ -50,24 +49,22 @@ export const SidebarLayout = styled.section`
 export const MainWrapper = styled.div`
     height: 90vh;
     padding: 8px 24px;
-    width: 85vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    @media screen and (min-width:576px){
+        width: 85vw;
+    }
 `
 
 export const BreadcrumbLayout = styled.div`
     width: 100%;
-    overflow: hidden;
     height: 100px;
-    margin-top: 5px;
-    padding: 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    overflow: hidden;
     @media screen and (min-width:990px)  {
         height: 10vh;
-
     }
 `
 export const ContentWrapper = styled.div`

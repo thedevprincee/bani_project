@@ -1,18 +1,17 @@
 import styled from "styled-components"
 
 const BreadcrumbWrapper = styled.div`
-    padding: 0 15px;
-    margin-top: 5px;
-    /* height: 100%; */
+    padding: 15px 15px;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    overflow: auto;
+    overflow-x: auto;
     white-space: nowrap;
     @media screen and (min-width:990px) {
         justify-content: space-between;
-        padding: 0 24px;
+        padding: 5px 0;
     }
 `
 
