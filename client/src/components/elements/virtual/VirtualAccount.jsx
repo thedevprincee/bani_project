@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Text from '../../atoms/text/Text'
 import VAWrapper, { VAHeader, VAIcon, VAIcons, VASearchLayout, VASInput, VASInputIcon, VASInputWrapper, VASTag } from './VirtualAccount.styles'
 import {FiGrid, FiServer} from 'react-icons/fi'
@@ -7,6 +7,10 @@ import {RiSettingsLine} from 'react-icons/ri'
 import VirtualAccTable from '../../molecules/table/VirtualAccTable'
 
 const VirtualAccount = () => {
+  const [search, setSearch] = useState("")
+  const changeSearch = (value) =>{
+    setSearch(value)
+  }
   return (
     <VAWrapper>
         <VAHeader>
@@ -19,7 +23,7 @@ const VirtualAccount = () => {
         <VASearchLayout>
             <VASTag><Text type="p">Branch</Text></VASTag>
             <VASInputWrapper>
-              <VASInput placeholder='Search for vitual account'/>
+              <VASInput value={search} onChange={(e)=>{changeSearch(e.target.value)}} placeholder='Search for vitual account'/>
               <VASInputIcon>
                 <CiSearch />
               </VASInputIcon>
@@ -29,7 +33,7 @@ const VirtualAccount = () => {
           <Text>Lekki II</Text>
           <Text>Manage <RiSettingsLine /></Text>
         </VASearchLayout>
-        <VirtualAccTable />
+        <VirtualAccTable searchValue={search} />
 
     </VAWrapper>
   )
