@@ -28,7 +28,6 @@ export const BodyWrapper = styled.div`
     flex-direction: column;
     position: relative;
     background-color: #F5F6FA;
-    /* overflow-y:scroll; */
     @media screen and (min-width:990px)  {
         height: 100%;
         flex-direction: row;
@@ -36,7 +35,6 @@ export const BodyWrapper = styled.div`
 `
 
 export const SidebarLayout = styled.section`
-
     background-color:white;
     padding:20px 24px;
     height: 92vh;
