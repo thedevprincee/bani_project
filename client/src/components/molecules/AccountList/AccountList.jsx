@@ -1,10 +1,10 @@
 import React from 'react'
-import { ListHeadItem, ListWrapper } from './AccountListStyled'
+import { ListHeadItem, ListWrapper, ScrollableWrapper } from './AccountListStyled'
 import ListData from './ListData'
 
 const AccountList = () => {
   return (
-    <>
+    <ScrollableWrapper>
         <ListWrapper>
             <ListHeadItem>
                 Transaction Details
@@ -18,9 +18,12 @@ const AccountList = () => {
             <ListHeadItem/>
         </ListWrapper>
         <ListWrapper>
-            <ListData/>
+            {
+                [...Array(5).keys()].map(i =>  <ListData key={i}/>)
+            }
+            
         </ListWrapper>
-    </>
+    </ScrollableWrapper>
   )
 }
 

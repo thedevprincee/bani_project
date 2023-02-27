@@ -8,7 +8,7 @@ const ListData = () => {
             Olaoluwa S.
         </StyledListData>
         <StyledListData>
-            Olaoluwa S.
+            100,000
         </StyledListData>
         <StyledListData>
             Olaoluwa S.

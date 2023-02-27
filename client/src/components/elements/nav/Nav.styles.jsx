@@ -5,9 +5,10 @@ const NavWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0 0 24px;
+  padding: 0px 24px 0 24px;
   -webkit-box-align: center;
   font-family: Poppins, sans-serif;
+  height: inherit;
   @media screen and (min-width: 990px) {
   }
 `;

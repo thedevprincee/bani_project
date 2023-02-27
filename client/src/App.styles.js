@@ -7,6 +7,10 @@ const AppWrapper = createGlobalStyle`
     box-sizing: border-box;
     font-family: Poppins, sans-serif;
 }
+/* table, tr, tbody, thead, td{
+    padding: 0;
+    margin: 0;
+} */
 `
 
 export default AppWrapper

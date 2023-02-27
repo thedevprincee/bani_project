@@ -16,10 +16,8 @@ import {
     
 } from "./activities.styled"
 import Text from '../../atoms/text/Text'
-import {FaChevronRight, FaDatabase} from 'react-icons/fa'
-import Table from "../../molecules/Table/Table"
+import {FaChevronRight} from 'react-icons/fa'
 import { ChainIcon } from "../../../assets/Icons"
-import { ListWrapper } from "../../molecules/AccountList/AccountListStyled"
 import AccountList from "../../molecules/AccountList/AccountList"
 function Activities() {
   return (
@@ -80,8 +78,7 @@ function Activities() {
                 </DynamicBranch>
             </InflowColumn>
         </InflowWrapper>
-        <Table/>
-        {/* <AccountList/> */}
+        <AccountList/>
     </ActivityFeedWrapper>
   )
 }

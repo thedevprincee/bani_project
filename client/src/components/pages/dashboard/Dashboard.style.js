@@ -8,9 +8,9 @@ const DashboadWrapper = styled.div`
     align-items: flex-start;
     justify-content: flex-start;
     position: relative;
-    overflow: hidden scroll;
+    /* overflow: hidden scroll; */
     @media screen and (min-width: 990px) {
-        overflow:hidden;
+        /* overflow:hidden; */
         
     }
     
