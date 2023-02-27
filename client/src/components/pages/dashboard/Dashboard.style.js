@@ -35,6 +35,7 @@ export const BodyWrapper = styled.div`
 `
 
 export const SidebarLayout = styled.section`
+    
     background-color:white;
     padding:20px 24px;
     height: 92vh;
@@ -46,9 +47,9 @@ export const SidebarLayout = styled.section`
         }
 `
 export const MainWrapper = styled.div`
-    width: 100%;
     height: 90vh;
     padding: 8px 24px;
+    width: 85vw;
     display: flex;
     flex-direction: column;
 `
