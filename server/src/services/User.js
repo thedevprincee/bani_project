@@ -1,22 +1,27 @@
 const User = require("../models/User");
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const {AuthenticationError, DefaultError} = require('../utils/apiError')
 
 const signUp = async (payload) =>{
     const {email, password} = payload 
     // Find user by mail
     const user = await findUserByMail(email)
     // Check if email/user already exists
-    if(user) return "email already"
-    const hashedPassword = await bcrypt.hash(password, 12)
-    //Create a JWT token
-    const token = jwt.sign(serializeUser(user), process.env.JWT_SECRET_KEY, {expiresIn: "1d"})
-    // Create a New User
-    const newUser = await User({
-        password: hashedPassword,
-        jwtToken: token
-    })
-    return newUser.save()
+    if(user) throw new AuthenticationError
+    try {
+        const hashedPassword = await bcrypt.hash(password, 12)
+        //Create a JWT token
+        // const token = jwt.sign(serializeUser(user), process.env.JWT_SECRET_KEY, {expiresIn: "1d"})
+        // Create a New User
+        const newUser = await User({
+            password: hashedPassword,
+            // jwtToken: token
+        })
+        return newUser.save()
+    } catch (error) {
+        throw new DefaultError
+    }
 }
 const login = async(payload)=>{
     const {email, password} = payload 
