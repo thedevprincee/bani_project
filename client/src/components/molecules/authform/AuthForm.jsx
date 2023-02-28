@@ -13,18 +13,26 @@ import {
 
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-export const AuthForm = () => {
+export const AuthForm = (isLogin) => {
   const [pwState, setPwState] = useState(true);
-  const pwStateHandler = () => {
-    if (pwState === true) {
-      setPwState(false);
-    } else {
-      setPwState(true);
-    }
-  };
+  // const pwStateHandler = () => {
+  //   if (pwState === true) {
+  //     setPwState(false);
+  //   } else {
+  //     setPwState(true);
+  //   }
+  // };
 
   return (
     <>
+      {
+        isLogin 
+          &&
+        <Label>
+          <LabelPText>First Name</LabelPText>
+          <EMInput />
+        </Label>
+      }
       <Label>
         <LabelPText>Email</LabelPText>
         <EMInput />
@@ -35,7 +43,7 @@ export const AuthForm = () => {
           <ForgotPwTxt>Forgot Password</ForgotPwTxt>
         </LabelPTextWrapper>
         <PWInput type={pwState ? "password" : "text"} autoComplete="off" />
-        <PwIcon onClick={pwStateHandler}>
+        <PwIcon onClick={() => setPwState(!pwState)}>
           {pwState ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
         </PwIcon>
       </Label>

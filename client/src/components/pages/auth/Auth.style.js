@@ -65,6 +65,7 @@ export const FormGetSt = styled.span`
     font-family: Poppins, sans-serif;
     color: rgb(84, 68, 242);
     margin: 1em 0 1em 0;
+    cursor: pointer;
 `
 
 
