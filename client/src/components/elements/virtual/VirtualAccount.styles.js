@@ -115,6 +115,10 @@ export const VASInput = styled.input`
     border-radius: 5px;
     border: 1px solid rgba(225, 225, 225, 0.8);
     padding: 0px 12px;
+    &:focus{
+        outline:2px solid black;
+        
+    }
 `
 
 export const VASInputIcon = styled.div`

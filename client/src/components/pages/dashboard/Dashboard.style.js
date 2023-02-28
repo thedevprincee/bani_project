@@ -10,27 +10,31 @@ const DashboadWrapper = styled.div`
     position: relative;
     /* overflow: hidden scroll; */
     @media screen and (min-width: 990px) {
-        /* overflow:hidden; */
+         overflow:hidden; 
         
     }
     
 `
 export const HeaderWrapper = styled.div`
     width: 100%;
-    height: 8vh;
+    padding:8px 0;
     border-bottom:1.5px solid rgb(222, 222, 227);
+    // height: 8vh;
     /* z-index: 2; */
 
 `
 export const BodyWrapper = styled.div`
     width: 100%;
     height: auto;
-    display: flex;
+    display:flex;
     flex-direction: column;
     position: relative;
     background-color: #F5F6FA;
-    /* overflow-y:scroll; */
     @media screen and (min-width:990px)  {
+        overflow-y:scroll;
+        display: grid;
+        grid-template-columns:12% 86%;
+        gap:18px;
         height: 100%;
         flex-direction: row;
     }
@@ -40,8 +44,8 @@ export const SidebarLayout = styled.section`
     
     background-color:white;
     padding:20px 24px;
-    height: 92vh;
-    width: 15vw;
+    // height: 92vh;
+    // width: 15vw;
     @media screen and (max-width:576px)  {
         padding: 14px 15px 28px 15px;
         width: 100vw;
@@ -50,17 +54,20 @@ export const SidebarLayout = styled.section`
 `
 export const MainWrapper = styled.div`
     height: 90vh;
-    padding: 8px 24px;
-    width: 85vw;
-    display: flex;
+    padding: 8px 10px 24px 8px;
+    // width: 85vw;
+    display: block;
     flex-direction: column;
+    @media screen and (min-width:990px)  {
+        padding-top: 0px; 
+    }
 `
 
 export const BreadcrumbLayout = styled.div`
-    width: 100%;
+    // width: 88vw;
     overflow: hidden;
     height: 100px;
-    margin-top: 5px;
+    // margin-top: 5px;
     padding: 0;
     display: flex;
     justify-content: flex-start;

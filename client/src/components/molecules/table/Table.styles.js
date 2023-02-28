@@ -30,8 +30,15 @@ export const THeader = styled.th`
 
 export const TRow = styled.tr`
     border-bottom: 1px solid rgba(225, 225, 225, 0.8);
-    &:hover{
-        background-color: #ccc;
+    border-left:3px solid white;
+    font-size: .9rem;
+    &:first-child{
+        color:rgb(117, 117, 117);
+    }
+    &:not(:first-child):hover{
+        background-color: rgb(245, 246, 250);
+        border-left:3px solid rgb(84, 68, 242);
+        cursor:pointer;
     }
 `
 

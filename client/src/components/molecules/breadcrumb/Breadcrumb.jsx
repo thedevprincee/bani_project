@@ -1,7 +1,13 @@
-import React from 'react'
-import Button from '../../atoms/button/Button'
-import Text from '../../atoms/text/Text'
-import BreadcrumbWrapper, { CrumbButtonSection, CrumbTitle } from './Breadcrumb.styles'
+import React from "react";
+import Button from "../../atoms/button/Button";
+import Text from "../../atoms/text/Text";
+import BreadcrumbWrapper, {
+  CrumbButtonSection,
+  CrumbTitle,
+  BranchBtn,
+  VirtualAcchBtn,
+} from "./Breadcrumb.styles";
+import Icon from "../../../assets/Icons.svg";
 
 const Breadcrumb = () => {
   return (
@@ -10,11 +16,16 @@ const Breadcrumb = () => {
         <Text type="h3">Virtual Account Dashboard</Text>
       </CrumbTitle>
       <CrumbButtonSection>
-        <Button>Create New Branch</Button>
-        <Button>Create Virtual Account</Button>
+        <BranchBtn>
+          <img src={Icon} alt="" />
+          <Text>Create New Branch</Text>
+        </BranchBtn>
+        <VirtualAcchBtn>
+          +<Text> Create Virtual Account</Text>
+        </VirtualAcchBtn>
       </CrumbButtonSection>
     </BreadcrumbWrapper>
-  )
-}
+  );
+};
 
-export default Breadcrumb
+export default Breadcrumb;
