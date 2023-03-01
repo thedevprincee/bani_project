@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import {actions} from '../../../store/features/authSlice'
+import { useSelector, useDispatch } from "react-redux";
 import { AuthForm } from "../../molecules/authform/AuthForm";
 import {
   AuthWrapper,
@@ -12,7 +14,11 @@ import {
 } from "./Auth.style";
 
 const Auth = () => {
-  const [isLogin, setIsLogin] = useState(true)
+  const isLogin = useSelector((state)=> state.isLogin)
+  const dispatch = useDispatch()
+  const handler = ()=>{
+    isLogin ? dispatch(actions.setLoginFalse()) : dispatch(actions.setLoginTrue()) 
+  }
   return (
     <AuthWrapper>
       <LogoCont>
@@ -22,9 +28,9 @@ const Auth = () => {
         <FormH2Text>{isLogin ? "Log in to your account": 'Create an Acccout'}</FormH2Text>
         <FormpTextWrapper>
           <FormpText>{isLogin ? "Don’t have an account?" : "Have an account?"}</FormpText>
-          <FormGetSt onClick={()=>  setIsLogin(!isLogin)}>{isLogin ? "Get Started": "Sign In"}</FormGetSt>
+          <FormGetSt onClick={handler}>{isLogin ? "Get Started": "Sign In"}</FormGetSt>
         </FormpTextWrapper>
-        <AuthForm isLogin={isLogin}/>
+        <AuthForm/>
       </FormWrapper>
     </AuthWrapper>
   );
