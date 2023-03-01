@@ -12,18 +12,19 @@ import {
 } from "./Auth.style";
 
 const Auth = () => {
+  const [isLogin, setIsLogin] = useState(true)
   return (
     <AuthWrapper>
       <LogoCont>
         <Logo />
       </LogoCont>
       <FormWrapper>
-        <FormH2Text>Log in to your account</FormH2Text>
+        <FormH2Text>{isLogin ? "Log in to your account": 'Create an Acccout'}</FormH2Text>
         <FormpTextWrapper>
-          <FormpText>Don’t have an account?</FormpText>
-          <FormGetSt>Get Started</FormGetSt>
+          <FormpText>{isLogin ? "Don’t have an account?" : "Have an account?"}</FormpText>
+          <FormGetSt onClick={()=>  setIsLogin(!isLogin)}>{isLogin ? "Get Started": "Sign In"}</FormGetSt>
         </FormpTextWrapper>
-        <AuthForm />
+        <AuthForm isLogin={isLogin}/>
       </FormWrapper>
     </AuthWrapper>
   );
