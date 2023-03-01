@@ -15,11 +15,19 @@ import {
 } from "./AuthForm.style";
 
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { useNavigate } from "react-router";
 
 export const AuthForm = () => {
+  const navigate = useNavigate()
   const isLogin = useSelector((state)=> state.isLogin)
-  
   const [pwState, setPwState] = useState(true);
+  const handler = ()=>{
+    if (isLogin){
+      navigate('/dashboard')
+    }else{
+
+    }
+  }
   // const pwStateHandler = () => {
   //   if (pwState === true) {
   //     setPwState(false);
@@ -62,7 +70,7 @@ export const AuthForm = () => {
           </PwIcon>
         </PwInputWrapper>
       </Label>
-      <LoginBtn>{isLogin ? "Login" : "Sign Up"}</LoginBtn>
+      <LoginBtn onClick={handler}>{isLogin ? "Login" : "Sign Up"}</LoginBtn>
     </>
   );
 };

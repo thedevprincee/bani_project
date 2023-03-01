@@ -84,4 +84,5 @@ export const LoginBtn = styled.button`
     padding: 10px;
     border-radius: 5px;
     text-align: center;
+    cursor: pointer;
 `
