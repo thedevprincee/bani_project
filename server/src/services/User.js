@@ -16,6 +16,7 @@ const signUp = async (payload) =>{
         // Create a New User
         const newUser = await User({
             password: hashedPassword,
+            email,
             // jwtToken: token
         })
         return newUser.save()
@@ -44,6 +45,7 @@ const login = async(payload)=>{
         return null
     }
 }
+
 function serializeUser(user){
     return {
         _id: user?._id,
