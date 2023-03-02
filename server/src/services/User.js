@@ -3,6 +3,11 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const {AuthenticationError, DefaultError} = require('../utils/apiError')
 
+const addAccount = async (payload)=>{
+    const {name, branch, accountno} = payload
+    
+}
+
 const signUp = async (payload) =>{
     const {email, password} = payload 
     // Find user by mail
@@ -57,5 +62,6 @@ async function findUserByMail(email){
 }
 module.exports = {
     signUp,
-    login
+    login,
+    addAccount
 }

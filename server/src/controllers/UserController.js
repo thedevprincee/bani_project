@@ -1,4 +1,4 @@
-const { signUp, login } = require('../services/User')
+const { signUp, login, addAccount } = require('../services/User')
 const AsyncWrapper = require('express-async-wrapper')
 const router = require('express').Router()
 
@@ -28,5 +28,19 @@ router.post('/login', AsyncWrapper(async(req, res)=>{
         console.log(error);
     }
 }))
+
+router.post('/add-account', async(req, res)=>{
+    const response = await addAccount(req.body)
+    try {
+        if (response){
+            res.status(200).json({
+                message: "Victual Account successfully add",
+                response: response
+            })
+        }
+    } catch (error) {
+        console.log(error.message);
+    }
+})
 
 module.exports = router
