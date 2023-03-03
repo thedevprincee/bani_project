@@ -1,8 +1,7 @@
 import React from "react";
 import Skeleton from "../../atoms/skeleton/Skeleton";
-import DashboadWrapper from "./Dashboard.style";
 import Breadcrumb from "../../molecules/breadcrumb/Breadcrumb";
-import {
+import DashboadWrapper, {
   HeaderWrapper,
   BodyWrapper,
   SidebarLayout,
@@ -10,7 +9,7 @@ import {
   BreadcrumbLayout,
   ContentWrapper,
   AccountLayout,
-  FeedLayout,
+  FeedLayout
 } from "./Dashboard.style";
 import Overview from "../../molecules/overview/Overview";
 import VirtualAccount from "../../elements/virtual/VirtualAccount";
@@ -19,10 +18,19 @@ import SideBarMenuSection from "../../molecules/sideBarMenuSection/SideBarMenuSe
 import Activities from "../../organisms/Activities/Activities";
 
 import Nav from "../../elements/nav/Nav";
+import Text from "../../atoms/text/Text";
+import CardModal from "../../organisms/modal/CardModal";
+import { AuthForm } from "../../molecules/authform/AuthForm";
+import BranchForm from "../../molecules/branchform/BranchForm";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const Dashboard = () => {
   return (
     <DashboadWrapper>
+      <ToastContainer />
       <HeaderWrapper>
         <Nav />
       </HeaderWrapper>
@@ -44,7 +52,15 @@ const Dashboard = () => {
             </FeedLayout>
           </ContentWrapper>
         </MainWrapper>
+
+        
       </BodyWrapper>
+      <CardModal title="Add Branch" >
+        <BranchForm />
+      </CardModal>
+      <CardModal title="Add Virtual Account" >
+        <VirtualAccForm />
+      </CardModal>
     </DashboadWrapper>
   );
 };

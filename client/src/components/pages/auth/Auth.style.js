@@ -3,7 +3,8 @@ import logo from "../../../assets/logo.svg";
 
 
 export const AuthWrapper = styled.div`
-    width: 100vw;
+    position: relative;
+    /* width: 100vw; */
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -65,6 +66,7 @@ export const FormGetSt = styled.span`
     font-family: Poppins, sans-serif;
     color: rgb(84, 68, 242);
     margin: 1em 0 1em 0;
+    cursor: pointer;
 `
 
 

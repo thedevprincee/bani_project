@@ -22,17 +22,21 @@ export const FormGetSt = styled.span`
 export const PWInput = styled.input.attrs({  id:'password' })`
     font-family: Poppins, sans-serif;
     width: 100%;
-    height: 36px;
+    height: inherit ;
     border: 1px solid rgba(225, 225, 225, 0.8);
     border-radius: 5px;
     padding: 0px 12px;
     font-size: 100%;
-`
- 
- export const PwIcon = styled.div`
+    `
+export const PwInputWrapper = styled.div`
+    margin-bottom: 15px;
     position: relative;
-    left:270px;
-    bottom:28px;
+    height: 36px;
+` 
+ export const PwIcon = styled.div`
+    position: absolute;
+    right:10px;
+    bottom:3%;
     cursor: pointer;
     font-size:1.35rem;
     width:20px;
@@ -46,7 +50,9 @@ export const PWInput = styled.input.attrs({  id:'password' })`
 
 export const Label = styled.label`
     display: block;
+    position: relative;
     color: rgb(101, 113, 124);
+    padding: 5px 0;
 `
 export const LabelPText = styled.p`
     font-weight: 400;
@@ -63,7 +69,7 @@ export const LabelPTextWrapper = styled.div`
     justify-content:space-between;
     align-items : flex-end;
     width:100%;
-    margin-top:15px;
+    /* margin-top:15px; */
     @media screen and (max-width: 576px) {
         width:80%;
 
@@ -79,4 +85,5 @@ export const LoginBtn = styled.button`
     padding: 10px;
     border-radius: 5px;
     text-align: center;
+    cursor: pointer;
 `

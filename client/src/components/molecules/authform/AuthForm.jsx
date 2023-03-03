@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+
 import {
   EMInput,
   PWInput,
@@ -9,22 +11,49 @@ import {
   ForgotPwTxt,
   LabelPTextWrapper,
   LoginBtn,
+  PwInputWrapper,
 } from "./AuthForm.style";
 
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { useNavigate } from "react-router";
 
 export const AuthForm = () => {
+  const navigate = useNavigate()
+  const isLogin = useSelector((state)=> state.auth.isLogin)
+
   const [pwState, setPwState] = useState(true);
-  const pwStateHandler = () => {
-    if (pwState === true) {
-      setPwState(false);
-    } else {
-      setPwState(true);
+  const handler = ()=>{
+    if (isLogin){
+      navigate('/dashboard')
+      
+    }else{
+
     }
-  };
+  }
+  // const pwStateHandler = () => {
+  //   if (pwState === true) {
+  //     setPwState(false);
+  //   } else {
+  //     setPwState(true);
+  //   }
+  // };
 
   return (
     <>
+      {
+          !isLogin 
+          &&
+          <>
+            <Label>
+              <LabelPText>First Name</LabelPText>
+              <EMInput />
+            </Label>
+            <Label>
+              <LabelPText>Last Name</LabelPText>
+              <EMInput />
+            </Label>
+          </>
+      }
       <Label>
         <LabelPText>Email</LabelPText>
         <EMInput />
@@ -32,14 +61,18 @@ export const AuthForm = () => {
       <Label>
         <LabelPTextWrapper>
           <LabelPText>Password</LabelPText>
-          <ForgotPwTxt>Forgot Password</ForgotPwTxt>
+          {
+            isLogin && <ForgotPwTxt>Forgot Password</ForgotPwTxt>
+          }
         </LabelPTextWrapper>
-        <PWInput type={pwState ? "password" : "text"} autoComplete="off" />
-        <PwIcon onClick={pwStateHandler}>
-          {pwState ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-        </PwIcon>
+        <PwInputWrapper>
+          <PWInput type={pwState ? "password" : "text"} autoComplete="off" />
+          <PwIcon onClick={() => setPwState(!pwState)}>
+            {pwState ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+          </PwIcon>
+        </PwInputWrapper>
       </Label>
-      <LoginBtn>Login</LoginBtn>
+      <LoginBtn onClick={handler}>{isLogin ? "Login" : "Sign Up"}</LoginBtn>
     </>
   );
 };

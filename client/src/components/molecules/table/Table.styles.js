@@ -39,7 +39,7 @@ export const TData = styled.td`
     padding: 12px 0;
     
 `
-export const TDataContent = styled.td`
+export const TDataContent = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
