@@ -58,9 +58,9 @@ const Dashboard = () => {
       <CardModal title="Add Branch" >
         <BranchForm />
       </CardModal>
-      <CardModal title="Add Virtual Account" >
+      {/* <CardModal title="Add Virtual Account" >
         <VirtualAccForm />
-      </CardModal>
+      </CardModal> */}
     </DashboadWrapper>
   );
 };
