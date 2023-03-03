@@ -1,4 +1,8 @@
+<<<<<<< HEAD:server/src/controllers/UserController.js
 const { signUp, login, addAccount } = require('../services/User')
+=======
+const { signUp, login } = require('../services/auth-service')
+>>>>>>> 4eba15568bebf1cc3341a0d4242557487a8bd1cf:server/src/controllers/auth-controller.js
 const AsyncWrapper = require('express-async-wrapper')
 const router = require('express').Router()
 
