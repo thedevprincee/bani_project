@@ -9,5 +9,5 @@ mongoose.connect(process.env.CONNECTION_URI, ()=>console.log("DATABASE CONNECTED
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
-app.use('/auth', require('./src/controllers/UserController'))
+app.use('/auth', require('./src/controllers/auth-controller'))
 app.listen(PORT, ()=> console.log(`currently connected at Port ${PORT}`))
