@@ -13,7 +13,7 @@ const CardWrapper = styled.div`
     min-height: 300px;
     background-color: #fff;
     padding: 20px;
-    display: ${({display})=>(display=="true" ? 'block' : 'none')};
+    display: ${({display})=>(display==="true" ? 'block' : 'none')};
     @media screen and (min-width:990px)  {
         transform:  translateY(-50%) translateX(-50%);
         min-width: 400px;

@@ -5,11 +5,13 @@ import 'react-toastify/dist/ReactToastify.css'
 import { useDispatch } from 'react-redux'
 import { setBranchForm } from '../../../store/features/modalSlice'
 
-const BranchForm = () => {
+const VitualAccForm = () => {
     const dispatch = useDispatch()
     const url = "http://127.0.0.1:2345/branch/addbranch"
+    const [bankName, setBankName] = useState("")
     const [branchName, setBranchName] = useState("")
-    const [branchLocation, setBranchLocation] = useState("")
+    const [accNumber, setAccNumber] = useState("")
+    const [inFlow, setInFlow] = useState("")
 
     const saveBranch = async()=>{
         if(branchName === "" || branchLocation ===""){
@@ -54,17 +56,25 @@ const BranchForm = () => {
   return (
     <>
             <Label>
-              <LabelPText>Branch Name</LabelPText>
+              <LabelPText>Bank</LabelPText>
+              <EMInput value={bankhName} onChange={(e)=>{setBankName(e.target.value)}} />
+            </Label>
+            <Label>
+              <LabelPText>Branch</LabelPText>
               <EMInput value={branchName} onChange={(e)=>{setBranchName(e.target.value)}} />
             </Label>
             <Label>
-              <LabelPText>Branch Location</LabelPText>
-              <EMInput value={branchLocation} onChange={(e)=>{setBranchLocation(e.target.value)}} />
+              <LabelPText>Account Number</LabelPText>
+              <EMInput value={accNumber} onChange={(e)=>{setAccNumber(e.target.value)}} />
             </Label>
-            <LoginBtn onClick={()=>{saveBranch()}}>Add Branch</LoginBtn>
+            <Label>
+              <LabelPText>Inflow</LabelPText>
+              <EMInput value={inFlow} onChange={(e)=>{setInFlow(e.target.value)}} />
+            </Label>
+            <LoginBtn onClick={()=>{saveBranch()}}>Add Virtual Account</LoginBtn>
             
     </>
   )
 }
 
-export default BranchForm
+export default VitualAccForm

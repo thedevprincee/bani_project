@@ -7,14 +7,20 @@ import CardWrapper,
     CardIcon
     } from './CardModal.styles'
 import {SlClose} from 'react-icons/sl'
+import { useDispatch } from 'react-redux'
+import { setBranchForm } from '../../../store/features/modalSlice'
+import { useSelector } from "react-redux";
 
-const CardModal = ({title, display, children}) => {
-    const [isModal, setIsModal] = useState(display)
+const CardModal = ({title, children}) => {
+
+  const isModal = useSelector((store)=>store.modal)
+  const dispatch = useDispatch()
+  
   return (
     <CardWrapper display={isModal}>
           <CardHeader>
             <Text type="h4">{title}</Text>
-            <CardIcon><SlClose onClick={()=>{setIsModal("false")}} /></CardIcon>
+            <CardIcon><SlClose onClick={()=>{dispatch(setBranchForm("false"))}} /></CardIcon>
           </CardHeader>
           <CardBody>
             {children}

@@ -3,10 +3,7 @@ const Branch = require('../models/Branch')
 
 const addBranch = async(payload)=>{
     const {name, location} = payload
-
-    console.log(name);
     try {
-        console.log(name, location)
         // const user = await Branch.create({name, location})
         const newBranch = Branch({
             name, 

@@ -19,11 +19,13 @@ import { useNavigate } from "react-router";
 
 export const AuthForm = () => {
   const navigate = useNavigate()
-  const isLogin = useSelector(store=> store.auth)
+  const isLogin = useSelector((state)=> state.auth.isLogin)
+
   const [pwState, setPwState] = useState(true);
   const handler = ()=>{
     if (isLogin){
       navigate('/dashboard')
+      
     }else{
 
     }

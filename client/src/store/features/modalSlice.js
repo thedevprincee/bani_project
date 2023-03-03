@@ -7,8 +7,9 @@ const modalSlice = createSlice({
     initialState,
     reducers:{
         setBranchForm(state, action){
-            state = action.payload
-        }
+            return state = action.payload
+        },
+        
     }
 })
 

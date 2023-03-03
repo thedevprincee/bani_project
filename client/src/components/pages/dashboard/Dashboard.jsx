@@ -25,7 +25,7 @@ import BranchForm from "../../molecules/branchform/BranchForm";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { useSelector } from "react-redux";
+
 
 const Dashboard = () => {
   return (
@@ -55,8 +55,11 @@ const Dashboard = () => {
 
         
       </BodyWrapper>
-      <CardModal title="Add Branch" display="true" >
+      <CardModal title="Add Branch" >
         <BranchForm />
+      </CardModal>
+      <CardModal title="Add Virtual Account" >
+        <VirtualAccForm />
       </CardModal>
     </DashboadWrapper>
   );

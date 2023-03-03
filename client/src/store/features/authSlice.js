@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const authSlice = createSlice({
     name: 'auth',
-    initialState:{isLogin  : true},
+    initialState:{isLogin  : false},
     reducers:{
         setLoginFalse(state, action){
             state.isLogin = false
@@ -12,4 +12,5 @@ export const authSlice = createSlice({
         },
     }
 })
-export const actions = authSlice.actions
+export const {setLoginFalse, setLoginTrue} = authSlice.actions
+export default authSlice.reducer

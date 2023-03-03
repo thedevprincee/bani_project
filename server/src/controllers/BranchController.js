@@ -4,7 +4,7 @@ const {addBranch, viewBranch, getBranchById} = require('../services/Branch')
 
 router.post("/addbranch", AsyncWrapper( async(req, res)=>{
     addBranch(req.body)
-    res.status(200).json({status: "ok", msg: "Successfully add new branch"})
+    res.status(200).json({status: "ok", msg: "New branch successfully added"})
 }))
 
 router.get("/", async(req, res)=>{
