@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "../../atoms/img/Image";
 import Text from "../../atoms/text/Text";
+import Logout from "../logout/Logout";
 import NavWrapper, {
   NavFlexColumn,
   NavIcon,
@@ -15,9 +16,19 @@ import NavWrapper, {
 } from "./Nav.styles";
 import logo from "../../../assets/logo.svg";
 import { HiOutlineBell } from "react-icons/hi";
-import { RxCaretDown } from "react-icons/rx";
+import { RxCaretDown, RxCaretUp } from "react-icons/rx";
 
 const Nav = () => {
+  const [clicked, setClicked] = useState(false);
+
+  const clickedHandler = () => {
+    if (clicked === true) {
+      setClicked(false);
+    } else {
+      setClicked(true);
+    }
+  };
+
   return (
     <NavWrapper>
       <NavLogoWrapper>
@@ -28,16 +39,17 @@ const Nav = () => {
           <HiOutlineBell />
           <NavIconNotify />
         </NavIcon>
-        <NavUserLayout>
+        <NavUserLayout onClick={clickedHandler}>
           <NavUserDp>JT</NavUserDp>
           <NavFlexColumn>
             <NavCompTxt>JT Industry Limit..</NavCompTxt>
             <NavMailTxt>JamesT@gmail.com</NavMailTxt>
           </NavFlexColumn>
           <NavUserDDIcon>
-            <RxCaretDown />
+            {clicked ? <RxCaretUp /> : <RxCaretDown />}
           </NavUserDDIcon>
         </NavUserLayout>
+        {clicked && <Logout />}
       </NavLeftLayout>
     </NavWrapper>
   );
