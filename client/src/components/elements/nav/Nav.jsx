@@ -48,8 +48,8 @@ const Nav = () => {
           <NavUserDDIcon>
             {clicked ? <RxCaretUp /> : <RxCaretDown />}
           </NavUserDDIcon>
+          {clicked && <Logout />}
         </NavUserLayout>
-        {clicked && <Logout />}
       </NavLeftLayout>
     </NavWrapper>
   );
