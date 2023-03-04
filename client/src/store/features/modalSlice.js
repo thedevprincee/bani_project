@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const initialState = 'false'
+const initialState = {
+    isModal: 'false',
+    modalType: "",
+    modalTitle: "",
+}
 
 const modalSlice = createSlice({
     name: 'modal',
@@ -8,6 +12,10 @@ const modalSlice = createSlice({
     reducers:{
         setBranchForm(state, action){
             return state = action.payload
+            return {...state, isModal: action.payload.isModel, 
+              modalType: action.payload.modalType, 
+              modelTitle: action.payload.modalTitle
+            }
         },
         
     }

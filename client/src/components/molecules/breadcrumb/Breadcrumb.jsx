@@ -8,7 +8,10 @@ import { setBranchForm } from '../../../store/features/modalSlice'
 const Breadcrumb = () => {
   const dispatch = useDispatch()
   const setBranchModal = ()=>{
-     dispatch(setBranchForm("true"))
+     dispatch(setBranchForm({isModal: 'true', modalType: 'branch', modalTitle: 'New Branch'}))
+  }
+  const setVirtualModal = ()=>{
+     dispatch(setBranchForm({isModal: 'true', modalType: 'virtual', modalTitle: 'Add Virtual Account'}))
   }
   return (
     <BreadcrumbWrapper>
@@ -17,7 +20,7 @@ const Breadcrumb = () => {
       </CrumbTitle>
       <CrumbButtonSection>
         <Button onclick={setBranchModal}>Create New Branch</Button>
-        <Button>Create Virtual Account</Button>
+        <Button onclick={setVirtualModal}>Create Virtual Account</Button>
       </CrumbButtonSection>
     </BreadcrumbWrapper>
   )

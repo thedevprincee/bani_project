@@ -4,8 +4,20 @@ const jwt = require('jsonwebtoken')
 const {AuthenticationError, DefaultError} = require('../utils/apiError')
 
 const addAccount = async (payload)=>{
-    const {name, branch, accountno} = payload
-    
+    // const {user, bank, branch, inflow, accountno} = payload
+    // try {
+    //     const newVirtual = User({
+    //         user,
+    //         bank, 
+    //         branch,
+    //         accountno,
+    //         inflow
+    //     })
+    //     return newVitual.save()
+
+    // } catch (error) {
+    //     console.log(error);
+    // }
 }
 
 const signUp = async (payload) =>{
