@@ -1,5 +1,5 @@
 import React from "react";
-import {actions} from '../../../store/features/authSlice'
+import {actions} from '../../../store/features/isLoginSlice'
 import { useSelector, useDispatch } from "react-redux";
 import { AuthForm } from "../../molecules/authform/AuthForm";
 import {
@@ -14,7 +14,9 @@ import {
 } from "./Auth.style";
 
 const Auth = () => {
-  const isLogin = useSelector((state)=> state.isLogin)
+  const isLogin = useSelector((state)=> state.reducer.isLogin)
+  // let isLogin = true
+  console.log(isLogin, "hello");
   const dispatch = useDispatch()
   const handler = ()=>{
     isLogin ? dispatch(actions.setLoginFalse()) : dispatch(actions.setLoginTrue()) 
