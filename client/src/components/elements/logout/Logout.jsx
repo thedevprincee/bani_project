@@ -9,7 +9,7 @@ const Logout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const logoutHandler = () => {
-    isLogin ? dispatch(setLoginFalse()) : dispatch(setLoginTrue());
+    isLogin ? dispatch(setLoginTrue()) : dispatch(setLoginFalse());
     navigate("/");
   };
   return (
