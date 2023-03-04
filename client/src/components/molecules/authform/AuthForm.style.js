@@ -62,6 +62,7 @@ export const Label = styled.label`
     display: block;
     position: relative;
     color: rgb(101, 113, 124);
+    padding: 5px 0;
 `
 export const LabelPText = styled.p`
     font-weight: 400;

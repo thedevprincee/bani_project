@@ -52,6 +52,7 @@ export const AuthForm = () => {
       console.log(formValues);
       setformValues(initialDataLogin)
       // navigate('/dashboard')
+
     }else{
       console.log(formValues);
       await dispatch(signupAsync(formValues))

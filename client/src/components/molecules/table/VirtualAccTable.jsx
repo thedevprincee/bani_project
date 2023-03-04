@@ -15,9 +15,11 @@ const VirtualAccTable = ({searchValue}) => {
    <TableWrapper>
     <Table>
         <THead>
-            <THeader>Bank Name</THeader>
-            <THeader>Account Number</THeader>
-            <THeader>Total Inflow</THeader>
+            <TRow>
+                <THeader>Bank Name</THeader>
+                <THeader>Account Number</THeader>
+                <THeader>Total Inflow</THeader>
+            </TRow>
         </THead>
         <TBody>
             {
