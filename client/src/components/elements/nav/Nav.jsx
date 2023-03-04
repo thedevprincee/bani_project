@@ -21,13 +21,13 @@ import { RxCaretDown, RxCaretUp } from "react-icons/rx";
 const Nav = () => {
   const [clicked, setClicked] = useState(false);
 
-  const clickedHandler = () => {
-    if (clicked === true) {
-      setClicked(false);
-    } else {
-      setClicked(true);
-    }
-  };
+  // const clickedHandler = () => {
+  //   if (clicked === true) {
+  //     setClicked(false);
+  //   } else {
+  //     setClicked(true);
+  //   }
+  // };
 
   return (
     <NavWrapper>
@@ -39,7 +39,7 @@ const Nav = () => {
           <HiOutlineBell />
           <NavIconNotify />
         </NavIcon>
-        <NavUserLayout onClick={clickedHandler}>
+        <NavUserLayout onClick={() => setClicked(!clicked)}>
           <NavUserDp>JT</NavUserDp>
           <NavFlexColumn>
             <NavCompTxt>JT Industry Limit..</NavCompTxt>
