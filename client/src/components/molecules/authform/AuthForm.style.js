@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-
+export const FormWrapper = styled.form``
 export const EMInput = styled.input.attrs({ type: "email" })`
     font-family: Poppins, sans-serif;
     width: 100%;
@@ -10,6 +10,16 @@ export const EMInput = styled.input.attrs({ type: "email" })`
     padding: 0px 12px;
     font-size: 100%;
 `;
+export const TextInput = styled.input.attrs({ type: "text" })`
+    font-family: Poppins, sans-serif;
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid rgba(225, 225, 225, 0.8);
+    padding: 0px 12px;
+    font-size: 100%;
+`;
+
 export const FormGetSt = styled.span`
     font-size: 0.9rem;
     font-weight: 400;

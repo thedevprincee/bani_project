@@ -8,7 +8,6 @@ const App = () => {
       <AppWrapper />
       <Routes>
         <Route path="/"
-          exact
           element={<Auth />}
         />
         <Route path="/dashboard"

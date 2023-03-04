@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { EMInput, Label, LabelPText, LoginBtn } from '../authform/AuthForm.style'
-import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+// import { toast } from 'react-toastify'
+// import 'react-toastify/dist/ReactToastify.css'
 import { useDispatch } from 'react-redux'
 import { setBranchForm } from '../../../store/features/modalSlice'
 

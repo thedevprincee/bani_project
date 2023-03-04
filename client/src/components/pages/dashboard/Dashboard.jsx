@@ -23,13 +23,15 @@ import CardModal from "../../organisms/modal/CardModal";
 import { AuthForm } from "../../molecules/authform/AuthForm";
 import VirtualAccForm from "../../molecules/virtualaccform/VirtualAccForm";
 import BranchForm from "../../molecules/branchform/BranchForm";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const Dashboard = () => {
   return (
     <DashboadWrapper>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       <HeaderWrapper>
         <Nav />
       </HeaderWrapper>
@@ -55,9 +57,9 @@ const Dashboard = () => {
       <CardModal title="Add Branch">
         <BranchForm />
       </CardModal>
-      <CardModal title="Add Virtual Account">
+      {/* <CardModal title="Add Virtual Account">
         <VirtualAccForm />
-      </CardModal> */}
+      </CardModal>  */}
     </DashboadWrapper>
   );
 };

@@ -68,6 +68,7 @@ export const NavIconNotify = styled.div`
 
 export const NavUserLayout = styled.div`
   display: flex;
+  position: relative;
   flex-direction: row;
   -webkit-box-pack: start;
   place-content: stretch flex-start;

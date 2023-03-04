@@ -3,11 +3,11 @@ import styled from "styled-components"
 export const LogoutWrapper = styled.div`
     position:absolute;
     top:40px;
-    right :40px;
+    right :0px;
     z-index:2;
-    background-color:rgb(245,246,250);
-    width:200px;
-    height:100px;
+    background-color:rgba(245,246,250, 0.7);
+    width:100%;
+    /* height:10px; */
     padding:20px 24px
 `
 export const LogoutBtn = styled.p`

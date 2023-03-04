@@ -24,13 +24,9 @@ const signUp = async (payload) =>{
             lastName,
             email,
             password: hashedPassword,
-<<<<<<< HEAD:server/src/services/User.js
             email,
             // jwtToken: token
-=======
->>>>>>> 4eba15568bebf1cc3341a0d4242557487a8bd1cf:server/src/services/auth-service.js
         })
-        // return serialize user and token
         return {
             user: serializeUser(newUser),
             token
