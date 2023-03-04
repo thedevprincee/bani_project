@@ -12,4 +12,4 @@ export const isLoginSlice = createSlice({
         },
     }
 })
-export const actions = isLoginSlice.actions
+export const {setLoginFalse, setLoginTrue} = isLoginSlice.actions

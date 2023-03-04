@@ -1,5 +1,5 @@
 import React from "react";
-import {actions} from '../../../store/features/isLoginSlice'
+import {setLoginFalse, setLoginTrue} from '../../../store/features/isLoginSlice'
 import { useSelector, useDispatch } from "react-redux";
 import { AuthForm } from "../../molecules/authform/AuthForm";
 import {

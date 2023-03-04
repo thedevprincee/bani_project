@@ -51,7 +51,7 @@ export const AuthForm = () => {
     if (isLogin){
       console.log(formValues);
       setformValues(initialDataLogin)
-      // navigate('/dashboard')
+      navigate('/dashboard')
 
     }else{
       console.log(formValues);

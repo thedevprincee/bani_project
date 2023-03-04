@@ -22,15 +22,15 @@ import Text from "../../atoms/text/Text";
 import CardModal from "../../organisms/modal/CardModal";
 import { AuthForm } from "../../molecules/authform/AuthForm";
 import BranchForm from "../../molecules/branchform/BranchForm";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 
 
 const Dashboard = () => {
   return (
     <DashboadWrapper>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       <HeaderWrapper>
         <Nav />
       </HeaderWrapper>

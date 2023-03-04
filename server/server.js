@@ -12,10 +12,8 @@ mongoose.connect(process.env.CONNECTION_URI, ()=>console.log("DATABASE CONNECTED
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
-<<<<<<< HEAD
 app.use('/api/auth', require('./src/controllers/auth-controller'))
 // app.use(verifyJwt)
-=======
 app.use((req, res, next)=>{
    res.setHeader('Access-Control-Allow-Originn', '*');
    res.setHeader('Access-Control-Allow-Method', 'OPTIONS, POST, PUT, GET, DELETE, PATCH');
@@ -23,12 +21,9 @@ app.use((req, res, next)=>{
    next();
 })
 
-app.use('/auth', require('./src/controllers/UserController'))
 app.use('/branch', require('./src/controllers/BranchController'))
 
-app.use('/auth', require('./src/controllers/auth-controller'))
-app.use(verifyJwt)
->>>>>>> cb0de3819944e3c81283b669cc01c1c5280c8725
+// app.use(verifyJwt)
 
 app.use('/', (req, res, next)=>{
     res.send("Home")
