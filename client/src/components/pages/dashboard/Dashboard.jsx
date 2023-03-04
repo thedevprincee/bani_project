@@ -57,7 +57,7 @@ const Dashboard = () => {
       </CardModal>
       <CardModal title="Add Virtual Account">
         <VirtualAccForm />
-      </CardModal>
+      </CardModal> */}
     </DashboadWrapper>
   );
 };
