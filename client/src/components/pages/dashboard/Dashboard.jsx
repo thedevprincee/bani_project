@@ -21,17 +21,32 @@ import Nav from "../../elements/nav/Nav";
 import Text from "../../atoms/text/Text";
 import CardModal from "../../organisms/modal/CardModal";
 import { AuthForm } from "../../molecules/authform/AuthForm";
-import VirtualAccForm from "../../molecules/virtualaccform/VirtualAccForm";
+import VirtualAccForm from '../../molecules/virtualaccform/VirtualAccForm';
 import BranchForm from "../../molecules/branchform/BranchForm";
-// import { ToastContainer } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { useSelector } from "react-redux";
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 const Dashboard = () => {
+
+  const isModal = useSelector(({modal})=>modal.isModal)
+  const modalType = useSelector(({modal})=>modal.modalType)
+  const modalTitle = useSelector(({modal})=>modal.modalTitle)
+
+
+const cardContent = () =>{
+  switch (modalType) {
+    case 'branch': return <BranchForm />;
+    case 'virtual': return <VirtualAccForm />;
+    default: ""
+ }
+}
   return (
     <DashboadWrapper>
-      {/* <ToastContainer /> */}
+      <ToastContainer />
       <HeaderWrapper>
         <Nav />
       </HeaderWrapper>
@@ -54,12 +69,11 @@ const Dashboard = () => {
           </ContentWrapper>
         </MainWrapper>
       </BodyWrapper>
-      <CardModal title="Add Branch">
-        <BranchForm />
+      <CardModal title={modalTitle} >
+          {
+           cardContent()
+          }
       </CardModal>
-      {/* <CardModal title="Add Virtual Account">
-        <VirtualAccForm />
-      </CardModal>  */}
     </DashboadWrapper>
   );
 };

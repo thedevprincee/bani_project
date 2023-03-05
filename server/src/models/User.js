@@ -22,7 +22,13 @@ const UserSchema = Schema({
         {
             logo: String,
             name: String,
-            accountNo: Number
+            accountNo: Number,
+            branch: {
+                id: String,
+                name: String,
+                location: String
+            },
+            inflow: Number
         }
     ]
 })

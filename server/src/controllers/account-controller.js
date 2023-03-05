@@ -4,7 +4,7 @@ const User = require('../models/User')
 const { addAccount, getAccounts, getAccount } = require('../services/account-service')
 
 
-router.post("/add-account",  expressAsyncWrapper( async(req, res)=>{
+router.post("/addaccount",  expressAsyncWrapper( async(req, res)=>{
     const {authorization} = req.headers
     const response = await addAccount(req.body, authorization)
     if (response) {
