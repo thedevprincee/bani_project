@@ -11,13 +11,13 @@ const VitualAccForm = () => {
     const addbranchUrl = "http://127.0.0.1:2345/branch/addbranch"
     const branchListUrl = "http://127.0.0.1:2345/branch"
     const addVirtualUrl = "http://127.0.0.1:2345/user/add-account"
-    const bankUrl = "https://merchant.birrionapi.com/api/get-banks"
-    const [bankList, setBankList] = useState({})
+    const bankUrl = "https://nigerianbanks.xyz"
+    const [bankList, setBankList] = useState([])
     const [branchList, setBranchList] = useState({})
     const [isBankLoad, setIsBankLoad] = useState(false)
     const [isBranchLoad, setIsBranchLoad] = useState(false)
-    const [bankName, setBankName] = useState("")
-    const [branchName, setBranchName] = useState("")
+    const [bankName, setBankName] = useState([])
+    const [branchName, setBranchName] = useState([])
     const [accNumber, setAccNumber] = useState("")
     const [inFlow, setInFlow] = useState("")
 
@@ -25,6 +25,7 @@ const VitualAccForm = () => {
 
         try {
             const resposed = await fetch(branchListUrl)
+            console.log(resposed);
             if(resposed.status === 200){
                 const result = await resposed.json()
                 setBranchList(result.branch)
@@ -47,9 +48,9 @@ const VitualAccForm = () => {
         };
         try {
             const resposed = await fetch(bankUrl, requestOptions)
-            const result = await resposed.json()
-            if(result.message === "successful"){
-                setBankList(result.data)
+            if(resposed.status === 200){
+                const result = await resposed.json()
+                setBankList(result)
                 setIsBankLoad(true)
             }else{
                 const notify = () => toast("error in getting bank");
@@ -87,21 +88,23 @@ const VitualAccForm = () => {
                 const response = await fetch(addVirtualUrl, requestOptions);
                 const data = await response.json();
                 if(data.status === 'ok'){
-                    setBankName("")
-                    setBranchName("")
+                    setBankName([])
+                    setBranchName([])
                     setAccNumber("")
                     setInFlow("")
                     const notify = () => toast(data.msg);
                     notify()
-                    dispatch(setBranchForm("false"))
+                    dispatch(setBranchForm({isModal: 'false', modalType: '', modalTitle: ''}))
+
                 }else{
                     const notify = () => toast("Error Connecting. Try again");
-                    setBankName("")
-                    setBranchName("")
+                    setBankName([])
+                    setBranchName([])
                     setAccNumber("")
                     setInFlow("")
                     notify()
-                    dispatch(setBranchForm("false"))
+                    dispatch(setBranchForm({isModal: 'false', modalType: '', modalTitle: ''}))
+
                 }
             } catch (error) {
                 console.log(error.message)
@@ -112,9 +115,10 @@ const VitualAccForm = () => {
         }
     }
 
+
     useEffect(()=>{
-        const callBankList = getBank()
         const callBranchList = getBranchList()
+        const callBankList = getBank()
 
     }, [])
 
@@ -125,19 +129,30 @@ const VitualAccForm = () => {
               <Select onChange={(e)=>{setBankName(e.target.value)}}>
                 {
                     isBankLoad ?
-                    bankList.map((bank)=> <option key={bank.code} value={bank.name}>{bank.name}</option> )
+                    <>
+                        <option>--Select Bank--</option>
+                        {
+                            bankList.map((bank)=> <option key={bank.code} value={[bank.name, bank.code, bank.logo]}>{bank.name}</option> )
+                        }
+                    </>
                     :
                     <option>Loading...</option>    
                 }
               </Select>
             </Label>
+           
             <Label>
               <LabelPText>Branch</LabelPText>
               <Select onChange={(e)=>{setBranchName(e.target.value)}} >
                 {
                     isBranchLoad ?
-                    branchList.map((branch)=> <option key={branch._id} value={branch._id}>{branch.name} - ({branch.location})</option> )
-                    :
+                    <>
+                        <option>--Select Branch--</option>
+                        {
+                         branchList.map((branch)=> <option key={branch._id} value={[branch._id, branch.name, branch.location]}>{branch.name} - ({branch.location})</option> )
+                        }
+                    </>
+                :
                     <option>Loading...</option>   
                 }
               </Select>
