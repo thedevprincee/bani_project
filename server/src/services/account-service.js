@@ -17,13 +17,17 @@ const getAccounts = async (token)=>{
     const user = await findUserById({_id: verifiedUser._id})
     return user.visualAccounts
 }
-const getAccount = async(payload, token)=>{
+const getAccount = async(id, token)=>{
     const verifiedUser = await getTokenFromUser(token)
     const user = await findUserById({_id: verifiedUser._id})
-    const account = await User.findOne({"_id: verifiedUser._id": payload})
+    const account = user.visualAccounts.find((account)=>account._id === account.id )
+    return account
 }
-const deleteAccount = (payload)=>{
-
+const deleteAccount = async(id, token)=>{
+    const verifiedUser = await getTokenFromUser(token)
+    const user = await findUserById({_id: verifiedUser._id})
+    const account = user.visualAccounts.filter((account)=>account._id !== account.id )
+    return account
 }
 const getTokenFromUser = async(token) => {
     const decoded = jwt.verify(token.split(" ")[1], process.env.JWT_SECRET_KEY)
