@@ -12,18 +12,19 @@ mongoose.connect(process.env.CONNECTION_URI, ()=>console.log("DATABASE CONNECTED
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
-app.use('/api/auth', require('./src/controllers/auth-controller'))
 // app.use(verifyJwt)
 app.use((req, res, next)=>{
-   res.setHeader('Access-Control-Allow-Originn', '*');
-   res.setHeader('Access-Control-Allow-Method', 'OPTIONS, POST, PUT, GET, DELETE, PATCH');
-   res.setHeader('Access-Control-Allow-Header', 'Content-Type, Authorization');
-   next();
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Method', 'OPTIONS, POST, PUT, GET, DELETE, PATCH');
+    res.setHeader('Access-Control-Allow-Header', 'Content-Type, Authorization');
+    next();
 })
-
+app.use(cors())
+app.use('/api/auth', require('./src/controllers/auth-controller'))
+app.use(verifyJwt)
+app.use("/api", require('./src/controllers/account-controller'))
 app.use('/branch', require('./src/controllers/BranchController'))
 
-// app.use(verifyJwt)
 
 app.use('/', (req, res, next)=>{
     res.send("Home")
