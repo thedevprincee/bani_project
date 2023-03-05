@@ -1,4 +1,4 @@
-const { signUp, login, addAccount } = require('../services/User')
+const { signUp, login, addAccount } = require('../services/auth-service')
 const AsyncWrapper = require('express-async-wrapper')
 const router = require('express').Router()
 

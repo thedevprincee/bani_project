@@ -9,7 +9,7 @@ const addAccount = async (payload)=>{
 }
 
 const signUp = async (payload) =>{
-    const {email, password} = payload 
+    const {email, password, firstName, lastName} = payload 
     // Find user by mail
     const user = await findUserByMail(email)
     // Check if email/user already exists
@@ -17,14 +17,20 @@ const signUp = async (payload) =>{
     try {
         const hashedPassword = await bcrypt.hash(password, 12)
         //Create a JWT token
-        // const token = jwt.sign(serializeUser(user), process.env.JWT_SECRET_KEY, {expiresIn: "1d"})
+        const token = jwt.sign(serializeUser(user), process.env.JWT_SECRET_KEY, {expiresIn: "1d"})
         // Create a New User
-        const newUser = await User({
+       const newUser = await User.create({
+            firstName,
+            lastName,
+            email,
             password: hashedPassword,
             email,
             // jwtToken: token
         })
-        return newUser.save()
+        return {
+            user: serializeUser(newUser),
+            token
+        }
     } catch (error) {
         throw new DefaultError
     }
@@ -40,8 +46,8 @@ const login = async(payload)=>{
             //Create a JWT token
             const token = jwt.sign(serializeUser(user), process.env.JWT_SECRET_KEY, {expiresIn: "1d"})
             return {
-                data: serializeUser(user),
-                token: token
+                user: serializeUser(user),
+                token
             }
         } else{
             return null
@@ -58,7 +64,7 @@ function serializeUser(user){
     }
 }
 async function findUserByMail(email){
-    return await User.findOne({email})
+    return User.findOne({email})
 }
 module.exports = {
     signUp,

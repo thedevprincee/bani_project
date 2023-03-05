@@ -18,10 +18,13 @@ const UserSchema = Schema({
         type: String,
         require: true
     },
-    jwtToken: {
-        type: String,
-    },
-    visualAccounts: []
+    visualAccounts: [
+        {
+            logo: String,
+            name: String,
+            accountNo: Number
+        }
+    ]
 })
 
 module.exports = mongoose.model('User', UserSchema)

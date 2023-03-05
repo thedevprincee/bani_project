@@ -9,7 +9,7 @@ import DashboadWrapper, {
   BreadcrumbLayout,
   ContentWrapper,
   AccountLayout,
-  FeedLayout
+  FeedLayout,
 } from "./Dashboard.style";
 import Overview from "../../molecules/overview/Overview";
 import VirtualAccount from "../../elements/virtual/VirtualAccount";
@@ -21,16 +21,17 @@ import Nav from "../../elements/nav/Nav";
 import Text from "../../atoms/text/Text";
 import CardModal from "../../organisms/modal/CardModal";
 import { AuthForm } from "../../molecules/authform/AuthForm";
+import VirtualAccForm from "../../molecules/virtualaccform/VirtualAccForm";
 import BranchForm from "../../molecules/branchform/BranchForm";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 
 
 const Dashboard = () => {
   return (
     <DashboadWrapper>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       <HeaderWrapper>
         <Nav />
       </HeaderWrapper>
@@ -52,15 +53,13 @@ const Dashboard = () => {
             </FeedLayout>
           </ContentWrapper>
         </MainWrapper>
-
-        
       </BodyWrapper>
-      <CardModal title="Add Branch" >
+      <CardModal title="Add Branch">
         <BranchForm />
       </CardModal>
-      <CardModal title="Add Virtual Account" >
+      {/* <CardModal title="Add Virtual Account">
         <VirtualAccForm />
-      </CardModal>
+      </CardModal>  */}
     </DashboadWrapper>
   );
 };
