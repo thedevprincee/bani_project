@@ -1,6 +1,36 @@
 import styled from 'styled-components'
 
 
+export const Select = styled.select`
+    font-family: Poppins, sans-serif;
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid rgba(225, 225, 225, 0.8);
+    padding: 0px 12px;
+    font-size: 100%;
+`;
+
+export const TXTInput = styled.input.attrs({ type: "text" })`
+    font-family: Poppins, sans-serif;
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid rgba(225, 225, 225, 0.8);
+    padding: 0px 12px;
+    font-size: 100%;
+`;
+
+export const NUMInput = styled.input.attrs({ type: "number" })`
+    font-family: Poppins, sans-serif;
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid rgba(225, 225, 225, 0.8);
+    padding: 0px 30px;
+    font-size: 100%;
+`;
+
 export const EMInput = styled.input.attrs({ type: "email" })`
     font-family: Poppins, sans-serif;
     width: 100%;
@@ -35,11 +65,11 @@ export const PwInputWrapper = styled.div`
 ` 
  export const PwIcon = styled.div`
     position: absolute;
-    right:10px;
-    bottom:3%;
+    right: 10px;
+    bottom: 3%;
     cursor: pointer;
-    font-size:1.35rem;
-    width:20px;
+    font-size: 1.35rem;
+    width: 20px;
     
 
     @media screen and (max-width: 576px) {
@@ -54,6 +84,29 @@ export const Label = styled.label`
     color: rgb(101, 113, 124);
     padding: 5px 0;
 `
+
+export const FormGroup = styled.div`
+    position: relative;
+    width: 100%;
+`
+
+export const FormLeftIcon = styled.div`
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 92%;
+    width: 25px;
+    border-radius: 4px;
+    color: #000;
+    background-color: #efefef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+` 
+
 export const LabelPText = styled.p`
     font-weight: 400;
     display: block;

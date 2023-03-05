@@ -21,11 +21,13 @@ app.use((req, res, next)=>{
 })
 
 app.use('/auth', require('./src/controllers/UserController'))
+app.use('/user', require('./src/controllers/UserController'))
 app.use('/branch', require('./src/controllers/BranchController'))
 
 
 app.use('/', (req, res, next)=>{
     res.send("Home")
 })
+
 
 app.listen(PORT, ()=> console.log(`currently connected at Port ${PORT}`))

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { EMInput, Label, LabelPText, LoginBtn } from '../authform/AuthForm.style'
+import { TXTInput, Label, LabelPText, LoginBtn } from '../authform/AuthForm.style'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useDispatch } from 'react-redux'
@@ -36,13 +36,13 @@ const BranchForm = () => {
                     setBranchName("")
                     setBranchLocation("")
                     notify()
-                    dispatch(setBranchForm("false"))
+                    dispatch(setBranchForm({isModal: 'false', modalType: '', modalTitle: ''}))
                 }else{
                     const notify = () => toast("Error Connecting. Try again");
                     setBranchName("")
                     setBranchLocation("")
                     notify()
-                    dispatch(setBranchForm("false"))
+                    dispatch(setBranchForm({isModal: 'false', modalType: '', modalTitle: ''}))
                 }
             } catch (error) {
                 console.log(error.message);
@@ -55,11 +55,11 @@ const BranchForm = () => {
     <>
             <Label>
               <LabelPText>Branch Name</LabelPText>
-              <EMInput value={branchName} onChange={(e)=>{setBranchName(e.target.value)}} />
+              <TXTInput value={branchName} onChange={(e)=>{setBranchName(e.target.value)}} />
             </Label>
             <Label>
               <LabelPText>Branch Location</LabelPText>
-              <EMInput value={branchLocation} onChange={(e)=>{setBranchLocation(e.target.value)}} />
+              <TXTInput value={branchLocation} onChange={(e)=>{setBranchLocation(e.target.value)}} />
             </Label>
             <LoginBtn onClick={()=>{saveBranch()}}>Add Branch</LoginBtn>
             

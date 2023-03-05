@@ -11,16 +11,16 @@ import { useDispatch } from 'react-redux'
 import { setBranchForm } from '../../../store/features/modalSlice'
 import { useSelector } from "react-redux";
 
-const CardModal = ({title, children}) => {
 
-  const isModal = useSelector((store)=>store.modal)
+const CardModal = ({title, children}) => {
+  const isModal = useSelector(({modal})=>modal.isModal)
   const dispatch = useDispatch()
   
   return (
     <CardWrapper display={isModal}>
           <CardHeader>
             <Text type="h4">{title}</Text>
-            <CardIcon><SlClose onClick={()=>{dispatch(setBranchForm("false"))}} /></CardIcon>
+            <CardIcon><SlClose onClick={()=>{dispatch(setBranchForm({isModal: 'false', modalType: '', modalTitle: ''}))}} /></CardIcon>
           </CardHeader>
           <CardBody>
             {children}
