@@ -34,12 +34,16 @@ export const CrumbButtonSection = styled.div`
         justify-content: flex-end;
     }
 `
-export const BranchBtn = styled.div`
+export const BranchBtn = styled.button`
     display:flex;
     align-items:center;
     justify-content:space-between;
     background-color:white;
     padding:10px 16px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    user-select: none; 
     border-radius:5px;
     font-size:0.9rem;
     color:rgb(117, 117, 117);

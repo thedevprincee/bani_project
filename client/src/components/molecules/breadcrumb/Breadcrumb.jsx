@@ -28,11 +28,11 @@ const Breadcrumb = () => {
       </CrumbTitle>
       <CrumbButtonSection>
 
-        <BranchBtn onclick={setBranchModal}>
+        <BranchBtn onClick={setBranchModal}>
           <img src={Icons} alt="" />
           <Text> Create New Branch</Text>
         </BranchBtn>
-        <VirtualAcchBtn onclick={setVirtualModal}>
+        <VirtualAcchBtn onClick={setVirtualModal}>
           {" "}
           <AiOutlinePlus />
           <Text>Create Virtual Account</Text>
