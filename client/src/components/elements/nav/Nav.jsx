@@ -21,14 +21,6 @@ import { RxCaretDown, RxCaretUp } from "react-icons/rx";
 const Nav = () => {
   const [clicked, setClicked] = useState(false);
 
-  // const clickedHandler = () => {
-  //   if (clicked === true) {
-  //     setClicked(false);
-  //   } else {
-  //     setClicked(true);
-  //   }
-  // };
-
   return (
     <NavWrapper>
       <NavLogoWrapper>
