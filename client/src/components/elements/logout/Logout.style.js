@@ -5,7 +5,7 @@ export const LogoutWrapper = styled.div`
     top:40px;
     right :0px;
     z-index:2;
-    background-color:rgba(245,246,250, 0.7);
+    background-color:rgba(245,246,250);
     width:100%;
     padding:20px 24px
 `

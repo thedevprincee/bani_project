@@ -17,7 +17,8 @@ const DashboadWrapper = styled.div`
 `
 export const HeaderWrapper = styled.div`
     width: 100%;
-    height: 8vh;
+    padding:9px 0;
+    border-bottom: 1.5px solid rgb(222, 222, 227);
     /* z-index: 2; */
 
 `
@@ -38,8 +39,7 @@ export const SidebarLayout = styled.section`
     
     background-color:white;
     padding:20px 24px;
-    height: 92vh;
-    width: 15vw;
+    width: 12vw;
     @media screen and (max-width:576px)  {
         padding: 14px 15px 28px 15px;
         width: 100vw;
@@ -48,12 +48,14 @@ export const SidebarLayout = styled.section`
 `
 export const MainWrapper = styled.div`
     height: 90vh;
-    padding: 8px 24px;
+    padding: 8px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow-y:scroll;
     @media screen and (min-width:576px){
-        width: 85vw;
+        padding: 8px 24px;
+        width: 88vw;
     }
 `
 
