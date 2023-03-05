@@ -21,12 +21,16 @@ app.use((req, res, next)=>{
 })
 app.use(cors())
 app.use('/api/auth', require('./src/controllers/auth-controller'))
-app.use(verifyJwt)
-app.use("/api", require('./src/controllers/account-controller'))
-app.use('/branch', require('./src/controllers/BranchController'))
+// app.use(verifyJwt)
+app.use("/api/virtual", require('./src/controllers/account-controller'))
+app.use('/api/branch', require('./src/controllers/BranchController'))
 
-
-app.use('/', (req, res, next)=>{
-    res.send("Home")
+app.use('/api', (req, res)=>{
+    res.send("API For Bani Project")
 })
+
+app.use('/', (req, res)=>{
+    res.send("Welcome to Bani Project")
+})
+
 app.listen(PORT, ()=> console.log(`currently connected at Port ${PORT}`))

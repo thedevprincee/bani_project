@@ -13,21 +13,26 @@ import { setBranchForm } from "../../../store/features/modalSlice";
 import Icons from "../../../assets/Icons.svg";
 
 const Breadcrumb = () => {
-  const dispatch = useDispatch();
-  const setBranchModal = () => {
-    dispatch(setBranchForm("true"));
-  };
+  const dispatch = useDispatch()
+  const setBranchModal = ()=>{
+     dispatch(setBranchForm({isModal: 'true', modalType: 'branch', modalTitle: 'New Branch'}))
+  }
+  const setVirtualModal = ()=>{
+     dispatch(setBranchForm({isModal: 'true', modalType: 'virtual', modalTitle: 'Add Virtual Account'}))
+  }
+
   return (
     <BreadcrumbWrapper>
       <CrumbTitle>
         <Text type="h4">Virtual Account Dashboard</Text>
       </CrumbTitle>
       <CrumbButtonSection>
+
         <BranchBtn onclick={setBranchModal}>
           <img src={Icons} alt="" />
           <Text> Create New Branch</Text>
         </BranchBtn>
-        <VirtualAcchBtn>
+        <VirtualAcchBtn onclick={setVirtualModal}>
           {" "}
           <AiOutlinePlus />
           <Text>Create Virtual Account</Text>
