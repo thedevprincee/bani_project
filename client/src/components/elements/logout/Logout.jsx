@@ -11,13 +11,11 @@ const Logout = () => {
   const isLogin = useSelector((state) => state.reducer.isLogin);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const logoutHandler = () => {
-    dispatch(setBranchForm({isModal: 'false', modalType: '', modalTitle: ''}))
+  const logoutHandler = async() => {
+    const isLogout = await dispatch(logout())
+    if(isLogout) navigate("/");
     isLogin ? dispatch(setLoginTrue()) : dispatch(setLoginFalse());
-    const logout = dispatch(logout())
-    if (logout) {
-      navigate("/");
-    }
+    dispatch(setBranchForm({isModal: 'false', modalType: '', modalTitle: ''}))
   };
   return (
     <LogoutWrapper>
