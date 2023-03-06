@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { LogoutWrapper, LogoutBtn } from "./Logout.style";
 import { setLoginFalse, setLoginTrue } from "../../../store/features/isLoginSlice";
 import { setBranchForm } from "../../../store/features/modalSlice";
+import { logout } from "../../../store/features/authSlice";
 
 
 const Logout = () => {
@@ -13,7 +14,10 @@ const Logout = () => {
   const logoutHandler = () => {
     dispatch(setBranchForm({isModal: 'false', modalType: '', modalTitle: ''}))
     isLogin ? dispatch(setLoginTrue()) : dispatch(setLoginFalse());
-    navigate("/");
+    const logout = dispatch(logout())
+    if (logout) {
+      navigate("/");
+    }
   };
   return (
     <LogoutWrapper>

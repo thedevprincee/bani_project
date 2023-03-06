@@ -36,12 +36,20 @@ const UserSchema = Schema({
             inflow: {
                 type: Number
             },
-
-            // timestamps: {
-            //     createdAt: new Date(),
-            //     updatedAt: new Date()
-            // }
+            branch: {
+                name: {
+                    type: String,
+                },
+                location: {
+                    type: String,
+                }
+            },
+            time : { 
+                type : Date, 
+                default: Date.now 
+            }
         }
+
     ],
 })
 
