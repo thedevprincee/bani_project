@@ -25,7 +25,6 @@ const signUp = async (payload) =>{
             email,
             password: hashedPassword,
             email,
-            // jwtToken: token
         })
         return {
             user: serializeUser(newUser),

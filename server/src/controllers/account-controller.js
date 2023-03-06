@@ -4,7 +4,7 @@ const User = require('../models/User')
 const { addAccount, getAccounts, getAccount, deleteAccount } = require('../services/account-service')
 
 
-router.post("/add-account",  expressAsyncWrapper( async(req, res)=>{
+router.post("/add_visual",  expressAsyncWrapper( async(req, res)=>{
     const {authorization} = req.headers
     const response = await addAccount(req.body, authorization)
     if (response) {
@@ -16,7 +16,7 @@ router.post("/add-account",  expressAsyncWrapper( async(req, res)=>{
     return;
 })
 )
-router.get("/accounts",  expressAsyncWrapper( async(req, res)=>{
+router.get("/visual",  expressAsyncWrapper( async(req, res)=>{
     const {authorization} = req.headers
     const response = await getAccounts(authorization)
     if (response) {
@@ -25,7 +25,7 @@ router.get("/accounts",  expressAsyncWrapper( async(req, res)=>{
     return;
 })
 )
-router.get("/accounts/:id",  expressAsyncWrapper( async(req, res)=>{
+router.get("/visual/:id",  expressAsyncWrapper( async(req, res)=>{
     const {authorization} = req.headers
     const id = req.params.id
     const response = await getAccount(id, authorization)
@@ -35,7 +35,7 @@ router.get("/accounts/:id",  expressAsyncWrapper( async(req, res)=>{
     return;
 })
 )
-router.delete("/user/virtual/:id",  expressAsyncWrapper( async(req, res)=>{
+router.delete("/virtual/:id",  expressAsyncWrapper( async(req, res)=>{
     const {authorization} = req.headers
     const id = req.params.id
     const response = await deleteAccount(id, authorization)

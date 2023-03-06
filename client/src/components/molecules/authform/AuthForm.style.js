@@ -97,3 +97,56 @@ export const LoginBtn = styled.button`
     text-align: center;
     cursor: pointer;
 `
+
+export const FormGroup = styled.div`
+    position: relative;
+    width: 100%;
+`
+
+export const FormLeftIcon = styled.div`
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 92%;
+    width: 25px;
+    border-radius: 4px;
+    color: #000;
+    background-color: #efefef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+` 
+
+export const Select = styled.select`
+    font-family: Poppins, sans-serif;
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid rgba(225, 225, 225, 0.8);
+    padding: 0px 12px;
+    font-size: 100%;
+`;
+
+export const TXTInput = styled.input.attrs({ type: "text" })`
+    font-family: Poppins, sans-serif;
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid rgba(225, 225, 225, 0.8);
+    padding: 0px 12px;
+    font-size: 100%;
+`;
+
+export const NUMInput = styled.input.attrs({ type: "number" })`
+    font-family: Poppins, sans-serif;
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid rgba(225, 225, 225, 0.8);
+    padding: 0px 30px;
+    font-size: 100%;
+`;
+

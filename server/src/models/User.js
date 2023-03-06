@@ -18,14 +18,31 @@ const UserSchema = Schema({
         type: String,
         require: true
     },
+    // branch: {
+    //     name: String,
+    //     location: String
+    // },
     visualAccounts: [
         {
-            logo: String,
-            name: String,
-            accountNo: Number,
-            // createdAt: new Date()
+            logo: {
+                type: String
+            },
+            name: {
+                type: String
+            },
+            accountNo: {
+                type: Number
+            },
+            inflow: {
+                type: Number
+            },
+
+            // timestamps: {
+            //     createdAt: new Date(),
+            //     updatedAt: new Date()
+            // }
         }
-    ]
+    ],
 })
 
 module.exports = mongoose.model('User', UserSchema)

@@ -3,6 +3,7 @@ import authAPI from "./authAPI"
 
 export const loginAsync = createAsyncThunk("login", async(data)=>{
     const response = await authAPI.login(data)
+    console.log(response.data.payload);
     if(!response.data.error){
         localStorage.setItem("token", response.data.payload.token)
     }

@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-// import {} from "@reduxjs/toolkit"
 const globalAxios = axios.create({
     baseURL: "http://localhost:2345/api/",
 })

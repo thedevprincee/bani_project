@@ -30,7 +30,7 @@ const deleteAccount = async(id, token)=>{
     return account
 }
 const getTokenFromUser = async(token) => {
-    const decoded = jwt.verify(token.split(" ")[1], process.env.JWT_SECRET_KEY)
+    const decoded = jwt.verify(token?.split(" ")[1], process.env.JWT_SECRET_KEY)
     if (!decoded._id) {
         throw NotFoundError("User not found")
     }
