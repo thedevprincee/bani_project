@@ -10,7 +10,7 @@ const VitualAccForm = () => {
     const dispatch = useDispatch()
     const addbranchUrl = `${baseUrl}/api/branch/addbranch`
     const branchListUrl = `${baseUrl}/api/branch`
-    const addVirtualUrl = `${baseUrl}/api/virtual/addaccount`
+    const addVirtualUrl = `${baseUrl}/api/user/virtual/addaccount`
     const bankUrl = "https://nigerianbanks.xyz"
     const [bankList, setBankList] = useState([])
     const [branchList, setBranchList] = useState({})
@@ -21,7 +21,11 @@ const VitualAccForm = () => {
     const [accNumber, setAccNumber] = useState("")
     const [inFlow, setInFlow] = useState("")
 
-
+    const token = localStorage.getItem("token");
+    // if(token){
+    //     config.headers.Authorization = `Bearer ${token}`
+    // }
+    console.log(token);
     const getBranchList = async() =>{
 
       try {
@@ -78,12 +82,11 @@ const VitualAccForm = () => {
               logo: bnkLogo,
               name: bnkName,
               accountNo: accNumber,
+              inflow: inFlow,
               branch: {
-                  id: branhId,
                   name: branhName,
                   location: branhLocation
               },
-              inflow: inFlow
             }
             const vitualJSON = JSON.stringify(newVirtual)
             const requestOptions = {
