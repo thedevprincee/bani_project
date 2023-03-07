@@ -35,7 +35,7 @@ export const AuthForm = () => {
     email: "",
     password: "",
   }
-  const [formValues, setformValues] = useState(initialDataLogin)
+  const [formValues, setformValues] = useState(isLogin ? initialDataLogin: initialDataSignup)
   
   const handleChange = (e) =>{
     setformValues((prev) =>{
@@ -67,14 +67,6 @@ export const AuthForm = () => {
 
     }
   }
-  // const pwStatehandleSubmit = () => {
-  //   if (pwState === true) {
-  //     setPwState(false);
-  //   } else {
-  //     setPwState(true);
-  //   }
-  // };
-
   return (
     <>
       <FormWrapper>

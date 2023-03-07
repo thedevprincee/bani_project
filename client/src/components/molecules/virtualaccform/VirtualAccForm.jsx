@@ -2,15 +2,18 @@ import React, {useState, useEffect} from 'react'
 import { TXTInput, NUMInput, FormLeftIcon, Select, FormGroup, Label, LabelPText, LoginBtn } from '../authform/AuthForm.style'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 import { setBranchForm } from '../../../store/features/modalSlice'
+import { getVirtualAsync, postVirtualAsync } from '../../../store/features/virtualSlice'
+import {getBranchAsync} from '../../../store/features/branchSlice'
 
 const VitualAccForm = () => {
+    // const virtualData = useSelector((state)=> state.virtual.data)
     const baseUrl = 'http://127.0.0.1:2345'
     const dispatch = useDispatch()
     const addbranchUrl = `${baseUrl}/api/branch/addbranch`
     const branchListUrl = `${baseUrl}/api/branch`
-    const addVirtualUrl = `${baseUrl}/api/virtual/addaccount`
+    const addVirtualUrl = `${baseUrl}/api/user/add_virtual`
     const bankUrl = "https://nigerianbanks.xyz"
     const [bankList, setBankList] = useState([])
     const [branchList, setBranchList] = useState({})
@@ -25,8 +28,10 @@ const VitualAccForm = () => {
     const getBranchList = async() =>{
 
       try {
-        const resposed = await fetch(branchListUrl)
-        if(resposed.status === 200){
+        // const resposed = await fetch(branchListUrl)
+        const resposed = useSelector((state)=> state.branch.data)
+        // if(resposed.status === 200){
+        if(resposed){
           const result = await resposed.json()
           setBranchList(result.branch)
           setIsBranchLoad(true)
@@ -44,8 +49,8 @@ const VitualAccForm = () => {
     const getBank = async() =>{
       let requestOptions = {
         method: 'GET',
-            redirect: 'follow'
-          };
+        redirect: 'follow'
+      };
           try {
             const resposed = await fetch(bankUrl, requestOptions)
             if(resposed.status === 200){
@@ -85,15 +90,15 @@ const VitualAccForm = () => {
               },
               inflow: inFlow
             }
-            const vitualJSON = JSON.stringify(newVirtual)
-            const requestOptions = {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: vitualJSON
-            }
-            
+            // const vitualJSON = JSON.stringify(newVirtual)
+            // const requestOptions = {
+            //   method: 'POST',
+            //   headers: { 'Content-Type': 'application/json' },
+            //   body: vitualJSON
+            // }
+            const response = dispatch(postVirtualAsync(newVirtual))
             try {
-              const response = await fetch(addVirtualUrl, requestOptions);
+              // const response = await fetch(addVirtualUrl, requestOptions);
               console.log(response)
               const data = await response.json();
               console.log(data)
@@ -123,8 +128,9 @@ const VitualAccForm = () => {
 
         }
     }
-
-
+    useEffect(()=>{
+      dispatch(getBranchAsync)
+    },[])
     useEffect(()=>{
         const callBranchList = getBranchList()
         const callBankList = getBank()

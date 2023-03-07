@@ -3,6 +3,7 @@ import { TXTInput, Label, LabelPText, LoginBtn } from '../authform/AuthForm.styl
 import { toast } from 'react-toastify'
 import { useDispatch } from 'react-redux'
 import { setBranchForm } from '../../../store/features/modalSlice'
+import { postBranch } from '../../../store/features/branchAPI'
 
 const BranchForm = () => {
     const baseUrl = 'http://127.0.0.1:2345'
@@ -22,15 +23,16 @@ const BranchForm = () => {
             }
             const branchJSON = JSON.stringify(branch)
             
-            const requestOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: branchJSON
-            }
+            
+            // const requestOptions = {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: branchJSON
+            // }
             
             try {
-                const response = await fetch(url, requestOptions);
-                const data = await response.json();
+                const response = dispatch(postBranch(branch))
+                const data = response.json()
                 if(data.status === 'ok'){
                     const notify = () => toast(data.msg);
                     setBranchName("")

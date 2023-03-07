@@ -4,7 +4,7 @@ const User = require('../models/User')
 const { addAccount, getAccounts, getAccount, deleteAccount } = require('../services/account-service')
 
 
-router.post("/add_visual",  expressAsyncWrapper( async(req, res)=>{
+router.post("/add_virtual",  expressAsyncWrapper( async(req, res)=>{
     const {authorization} = req.headers
     const response = await addAccount(req.body, authorization)
     if (response) {
@@ -16,7 +16,7 @@ router.post("/add_visual",  expressAsyncWrapper( async(req, res)=>{
     return;
 })
 )
-router.get("/visual",  expressAsyncWrapper( async(req, res)=>{
+router.get("/virtual",  expressAsyncWrapper( async(req, res)=>{
     const {authorization} = req.headers
     const response = await getAccounts(authorization)
     if (response) {
@@ -25,7 +25,7 @@ router.get("/visual",  expressAsyncWrapper( async(req, res)=>{
     return;
 })
 )
-router.get("/visual/:id",  expressAsyncWrapper( async(req, res)=>{
+router.get("/virtual/:id",  expressAsyncWrapper( async(req, res)=>{
     const {authorization} = req.headers
     const id = req.params.id
     const response = await getAccount(id, authorization)

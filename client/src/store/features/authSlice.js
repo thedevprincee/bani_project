@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import authAPI from "./authAPI"
 
-export const loginAsync = createAsyncThunk("login", async(data)=>{
+export const loginAsync = createAsyncThunk("login",async(data)=>{
     const response = await authAPI.login(data)
     if(!response.data.error){
         localStorage.setItem("token", response.data.payload.token)
