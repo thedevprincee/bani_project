@@ -21,8 +21,8 @@ app.use((req, res, next)=>{
 })
 app.use(cors())
 app.use('/api/auth', require('./src/controllers/auth-controller'))
-// app.use(verifyJwt)
-app.use("/api/user/virtual", require('./src/controllers/account-controller'))
+app.use(verifyJwt)
+app.use("/api/user", require('./src/controllers/account-controller'))
 app.use('/api/branch', require('./src/controllers/BranchController'))
 
 app.use('/api', (req, res)=>{

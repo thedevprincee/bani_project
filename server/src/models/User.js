@@ -18,19 +18,39 @@ const UserSchema = Schema({
         type: String,
         require: true
     },
+    // branch: {
+    //     name: String,
+    //     location: String
+    // },
     visualAccounts: [
         {
-            logo: String,
-            name: String,
-            accountNo: Number,
-            branch: {
-                id: String,
-                name: String,
-                location: String
+            logo: {
+                type: String
             },
-            inflow: Number
+            name: {
+                type: String
+            },
+            accountNo: {
+                type: Number
+            },
+            inflow: {
+                type: Number
+            },
+            branch: {
+                name: {
+                    type: String,
+                },
+                location: {
+                    type: String,
+                }
+            },
+            time : { 
+                type : Date, 
+                default: Date.now 
+            }
         }
-    ]
+
+    ],
 })
 
 module.exports = mongoose.model('User', UserSchema)

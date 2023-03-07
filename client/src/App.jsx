@@ -1,7 +1,14 @@
 import AppWrapper from "./App.styles";
 import Auth from "./components/pages/auth/auth";
 import Dashboard from "./components/pages/dashboard/Dashboard";
-import {Routes, Route, } from 'react-router-dom'
+import {Routes, Route, Navigate, } from 'react-router-dom'
+const ProtectedRoute = ({redirectPath = "/", children})=>{
+  const token = localStorage.getItem("token")
+  if(!token){
+    return <Navigate to={redirectPath} replace/>
+  }
+  return children
+}
 const App = () => {
   return (
     <>
@@ -11,8 +18,13 @@ const App = () => {
           element={<Auth />}
         />
         <Route path="/dashboard"
-          element={<Dashboard />}
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
         />
+        <Route path="*" element={<Auth/>}/>
         
       </Routes>
     </>

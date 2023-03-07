@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import authAPI from "./authAPI"
 
-export const loginAsync = createAsyncThunk("login", async(data)=>{
+export const loginAsync = createAsyncThunk("login",async(data)=>{
     const response = await authAPI.login(data)
     if(!response.data.error){
         localStorage.setItem("token", response.data.payload.token)
@@ -27,19 +27,19 @@ const authSlice = createSlice({
             state.data = {}
         }
     },
-    extraReducers: {
-        [loginAsync.fulfilled]: (state, action)=>{
+    extraReducers: (builder)=>{
+        builder.addCase(loginAsync.fulfilled, (state, action)=>{
             const {payload} = action;
             state.data = {
                 ...payload.payload.user
             }
-        },
-        [signupAsync.fulfilled]: (state, action)=>{
+        }),
+        builder.addCase(signupAsync.fulfilled, (state, action)=>{
             const {payload} = action;
             state.data = {
                 ...payload.payload.user
             }
-        },
+        })
     }
 })
 

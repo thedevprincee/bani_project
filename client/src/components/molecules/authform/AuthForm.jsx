@@ -35,7 +35,7 @@ export const AuthForm = () => {
     email: "",
     password: "",
   }
-  const [formValues, setformValues] = useState(initialDataSignup)
+  const [formValues, setformValues] = useState(isLogin ? initialDataLogin: initialDataSignup)
   
   const handleChange = (e) =>{
     setformValues((prev) =>{
@@ -50,24 +50,23 @@ export const AuthForm = () => {
     e.preventDefault()
     if (isLogin){
       console.log(formValues);
-      setformValues(initialDataLogin)
-      navigate('/dashboard')
-
+      const logon = await dispatch(loginAsync(formValues))
+      if (logon) {
+        setformValues(initialDataLogin)
+        navigate('/dashboard')
+      }
+      
     }else{
       console.log(formValues);
-      await dispatch(signupAsync(formValues))
-      setformValues(initialDataSignup)
+      const signup = await dispatch(signupAsync(formValues))
+      if (signup) {
+        setformValues(initialDataSignup)
+        navigate('/dashboard')
+      }
+      
 
     }
   }
-  // const pwStatehandleSubmit = () => {
-  //   if (pwState === true) {
-  //     setPwState(false);
-  //   } else {
-  //     setPwState(true);
-  //   }
-  // };
-
   return (
     <>
       <FormWrapper>

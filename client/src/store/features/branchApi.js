@@ -1,43 +1,35 @@
 import axios from 'axios'
-
 const globalAxios = axios.create({
-    baseURL: "http://localhost:2345/api/",
+    baseURL: "http://localhost:2345/api/branch"
 })
-
 globalAxios.interceptors.request.use((config)=>{
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token")
     if(token){
         config.headers.Authorization = `Bearer ${token}`
     }
     return config
 })
-
-const apiService = (url, method, data)=> {
+const apiService = (url, method, data)=>{
     return new Promise((resolve, reject)=>{
         globalAxios({
             method,
             url,
             headers: {
                 Accept: "application/json"
-            }, 
-            data,
+            }
         })
-        .then((response)=> {
+        .then((response)=>{
             resolve(response)
         })
         .catch((error)=>{
             reject(new Error(error.response.data.message))
         })
     })
-};
-export const login = (data) =>{
-    return apiService('/auth/login', "POST", data)
 }
-export const signup = (data) =>{
-    return apiService('/auth/signup', "POST", data)
+
+export const postBranch = (data)=>{
+    return apiService('/addbranch', "POST", data)
 }
-const authAPIs = {
-    login,
-    signup
+export const getBranch = (data)=>{
+    return apiService('/', "GET", data)
 }
-export default authAPIs
