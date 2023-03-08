@@ -17,10 +17,10 @@ const getAccounts = async (token)=>{
     const user = await findUserById({_id: verifiedUser._id})
     return user.visualAccounts
 }
-const getAccount = async(id, token)=>{
+const getAccount = async(visualId, token)=>{
     const verifiedUser = await getTokenFromUser(token)
     const user = await findUserById({_id: verifiedUser._id})
-    const account = user.visualAccounts.find((account)=>account._id === account.id )
+    const account = user.visualAccounts.find(({_id})=>_id.toString() === visualId.toString() )
     return account
 }
 const deleteAccount = async(id, token)=>{
