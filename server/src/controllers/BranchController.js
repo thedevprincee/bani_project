@@ -9,6 +9,7 @@ router.post("/addbranch", AsyncWrapper( async(req, res)=>{
 
 router.get("/", async(req, res)=>{
     const branch = await viewBranch()
+    console.log(branch);
     res.status(200).json({branch})
 })
 

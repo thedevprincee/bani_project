@@ -9,8 +9,8 @@ import {getBranchAsync} from '../../../store/features/branchSlice'
 
 const VitualAccForm = () => {
     // const virtualData = useSelector((state)=> state.virtual.data)
-    const baseUrl = 'http://127.0.0.1:2345'
     const dispatch = useDispatch()
+    const baseUrl = 'http://127.0.0.1:2345'
     const addbranchUrl = `${baseUrl}/api/branch/addbranch`
     const branchListUrl = `${baseUrl}/api/branch`
     const addVirtualUrl = `${baseUrl}/api/user/add_virtual`
@@ -25,23 +25,22 @@ const VitualAccForm = () => {
     const [inFlow, setInFlow] = useState("")
 
     const token = localStorage.getItem("token");
-    // if(token){
-    //     config.headers.Authorization = `Bearer ${token}`
-    // }
-    console.log(token);
-    const getBranchList = async() =>{
 
+    const getBranchList = async() =>{
+      
       try {
-        // const resposed = await fetch(branchListUrl)
-        const resposed = useSelector((state)=> state.branch.data)
-        // if(resposed.status === 200){
-        if(resposed){
-          const result = await resposed.json()
-          setBranchList(result.branch)
-          setIsBranchLoad(true)
-        }else{
-          const notify = () => toast("error in getting bank");
-          notify()
+        const resposed = await fetch(branchListUrl)
+        console.log(resposed);
+        // const resposed = useSelector((state)=> state.branch.data)
+        if(resposed.status === 200){
+          if(resposed){
+            const result = await resposed.json()
+            setBranchList(result.branch)
+            setIsBranchLoad(true)
+          }else{
+            const notify = () => toast("error in getting bank");
+            notify()
+          }
         }
       } catch (error) {
         console.log(error.message)
@@ -78,8 +77,8 @@ const VitualAccForm = () => {
           const notify = () => toast("All field must be filled out");
           notify()
         }else{
-          const bankNameArr = bankName.split(",")
-          const branchNNameArr = branchName.split(",")
+          const bankNameArr = bankName?.split(",")
+          const branchNNameArr = branchName?.split(",")
           const [bnkName, bnkCode, bnkLogo] = bankNameArr
           const [branhId, branhName, branhLocation] = branchNNameArr
             
@@ -93,15 +92,15 @@ const VitualAccForm = () => {
                   location: branhLocation
               },
             }
-            // const vitualJSON = JSON.stringify(newVirtual)
-            // const requestOptions = {
-            //   method: 'POST',
-            //   headers: { 'Content-Type': 'application/json' },
-            //   body: vitualJSON
-            // }
-            const response = dispatch(postVirtualAsync(newVirtual))
+            const vitualJSON = JSON.stringify(newVirtual)
+            const requestOptions = {
+              method: 'POST',
+              headers: { 'Authorization' : `Bearer ${token}`, 'Content-Type': 'application/json' },
+              body: vitualJSON
+            }
+            // const response = dispatch(postVirtualAsync(newVirtual))
             try {
-              // const response = await fetch(addVirtualUrl, requestOptions);
+              const response = await fetch(addVirtualUrl, requestOptions);
               console.log(response)
               const data = await response.json();
               console.log(data)
