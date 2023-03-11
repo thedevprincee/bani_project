@@ -39,10 +39,12 @@ const updateAccount = async(virtualId, token, payload)=>{
             _id: verifiedUser._id
         }, 
         {$set: {"visualAccounts.$[el1]": payload}},
-        {arrayFilters:[
-            {"el1._id": virtualId}
-        ]}, 
-        // {returnOriginal:false}
+        {
+            arrayFilters:[
+                {"el1._id": virtualId}
+            ],
+            returnOriginal: false
+        } 
     )
     return user.visualAccounts
 }
