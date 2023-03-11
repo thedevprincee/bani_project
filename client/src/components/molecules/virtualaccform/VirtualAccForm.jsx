@@ -14,6 +14,7 @@ const VitualAccForm = () => {
     const addbranchUrl = `${baseUrl}/api/branch/addbranch`
     const branchListUrl = `${baseUrl}/api/branch`
     const addVirtualUrl = `${baseUrl}/api/user/add_virtual`
+    const getVirtualUrl = `${baseUrl}/api/user/virtual`
     const bankUrl = "https://nigerianbanks.xyz"
     const [bankList, setBankList] = useState([])
     const [branchList, setBranchList] = useState({})
@@ -24,7 +25,6 @@ const VitualAccForm = () => {
     const [accNumber, setAccNumber] = useState("")
     const [inFlow, setInFlow] = useState("")
 
-    const token = localStorage.getItem("token");
 
     const getBranchList = async() =>{
       
@@ -92,24 +92,28 @@ const VitualAccForm = () => {
                   location: branhLocation
               },
             }
+        
+            const token = localStorage.getItem("token");
+
             const vitualJSON = JSON.stringify(newVirtual)
             const requestOptions = {
               method: 'POST',
-              headers: { 'Authorization' : `Bearer ${token}`, 'Content-Type': 'application/json' },
+              headers: { 
+                'Authorization' : `${token}`, 
+                'Content-Type': 'application/json' 
+              },
               body: vitualJSON
             }
             // const response = dispatch(postVirtualAsync(newVirtual))
             try {
               const response = await fetch(addVirtualUrl, requestOptions);
-              console.log(response)
               const data = await response.json();
-              console.log(data)
                 if(data.status === 'ok'){
                     setBankName([])
                     setBranchName([])
                     setAccNumber("")
                     setInFlow("")
-                    const notify = () => toast(data.msg);
+                    const notify = () => toast(data.message);
                     notify()
                     dispatch(setBranchForm({isModal: 'false', modalType: '', modalTitle: ''}))
                 }else{

@@ -6,10 +6,10 @@ const { addAccount, getAccounts, getAccount, deleteAccount } = require('../servi
 
 router.post("/add_virtual",  expressAsyncWrapper( async(req, res)=>{
     const {authorization} = req.headers
-    console.log(authorization);
     const response = await addAccount(req.body, authorization)
     if (response) {
         res.status(201).json({
+            status: "ok",
             message: "Account Added Successfully",
             payload: response    
         })

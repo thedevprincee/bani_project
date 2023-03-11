@@ -4,13 +4,13 @@ const { NotFoundError } = require("../utils/apiError")
 
 const addAccount = async (payload, token)=>{
     const verifiedUser = await getTokenFromUser(token)
-    // const user = await findUserById({_id: verifiedUser._id})
+    const user = await findUserById({_id: verifiedUser._id})
     const newAccount = await User.findOneAndUpdate(
         {_id: verifiedUser._id},
         {$push: {visualAccounts: payload}},
         {returnOriginal: false}
     )
-    return newAccount.visualAccounts
+    return payload
 }
 const getAccounts = async (token)=>{
     const verifiedUser = await getTokenFromUser(token)
@@ -29,13 +29,16 @@ const deleteAccount = async(id, token)=>{
     const account = user.visualAccounts.filter((account)=>account._id !== account.id )
     return account
 }
+
 const getTokenFromUser = async(token) => {
-    const decoded = jwt.verify(token?.split(" ")[1], process.env.JWT_SECRET_KEY)
+    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY)
     if (!decoded._id) {
         throw NotFoundError("User not found")
     }
     return serializeUser(decoded)
 }
+
+
 const serializeUser = (user)=>{
     return {
         _id: user?._id,
