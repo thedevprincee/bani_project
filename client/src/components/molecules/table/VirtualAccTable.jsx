@@ -6,7 +6,6 @@ import {MdContentCopy} from 'react-icons/md'
 import {HiDotsVertical} from 'react-icons/hi'
 import {GiContract} from 'react-icons/gi'
 import Badge from '../../atoms/badge/Badge'
-import logo from '../../../assets/logo.svg'
 import Image from '../../atoms/img/Image'
 
 const VirtualAccTable = ({searchValue}) => {
