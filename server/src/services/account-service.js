@@ -7,30 +7,30 @@ const addAccount = async (payload, token)=>{
     // const user = await findUserById({_id: verifiedUser._id})
     const newAccount = await User.findOneAndUpdate(
         {_id: verifiedUser._id},
-        {$push: {visualAccounts: payload}},
+        {$push: {virtualAccounts: payload}},
         {returnOriginal: false}
     )
-    return newAccount.visualAccounts
+    return newAccount.virtualAccounts
 }
 const getAccounts = async (token)=>{
     const verifiedUser = await getTokenFromUser(token)
     const user = await findUserById({_id: verifiedUser._id})
-    return user.visualAccounts
+    return user.virtualAccounts
 }
 const getAccount = async(virtualId, token)=>{
     const verifiedUser = await getTokenFromUser(token)
     const user = await findUserById({_id: verifiedUser._id})
-    const account = user.visualAccounts.find(({_id})=>_id.toString() === virtualId.toString() )
+    const account = user.virtualAccounts.find(({_id})=>_id.toString() === virtualId.toString() )
     return account
 }
 const deleteAccount = async(virtualId, token)=>{
     const verifiedUser = await getTokenFromUser(token)
         const user = await User.findOneAndUpdate(
         {_id: verifiedUser._id}, 
-        {$pull: {visualAccounts: {_id: virtualId}}}, 
+        {$pull: {virtualAccounts: {_id: virtualId}}}, 
         {returnOriginal: false}
     )
-    return user.visualAccounts
+    return user.virtualAccounts
 }
 const updateAccount = async(virtualId, token, payload)=>{
     const verifiedUser = await getTokenFromUser(token)
@@ -38,7 +38,7 @@ const updateAccount = async(virtualId, token, payload)=>{
         {
             _id: verifiedUser._id
         }, 
-        {$set: {"visualAccounts.$[el1]": payload}},
+        {$set: {"virtualAccounts.$[el1]": payload}},
         {
             arrayFilters:[
                 {"el1._id": virtualId}
@@ -46,7 +46,7 @@ const updateAccount = async(virtualId, token, payload)=>{
             returnOriginal: false
         } 
     )
-    return user.visualAccounts
+    return user.virtualAccounts
 }
 
 const getTokenFromUser = async(token) => {
