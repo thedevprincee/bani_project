@@ -25,9 +25,26 @@ const getAccount = async(virtualId, token)=>{
 }
 const deleteAccount = async(virtualId, token)=>{
     const verifiedUser = await getTokenFromUser(token)
-    const user = await findUserById({_id: verifiedUser._id})
-    const account = user.visualAccounts
-    return account
+        const user = await User.findOneAndUpdate(
+        {_id: verifiedUser._id}, 
+        {$pull: {visualAccounts: {_id: virtualId}}}, 
+        {returnOriginal: false}
+    )
+    return user.visualAccounts
+}
+const updateAccount = async(virtualId, token, payload)=>{
+    const verifiedUser = await getTokenFromUser(token)
+    const user = await User.findOneAndUpdate(
+        {
+            _id: verifiedUser._id
+        }, 
+        {$set: {"visualAccounts.$[el1]": payload}},
+        {arrayFilters:[
+            {"el1._id": virtualId}
+        ]}, 
+        // {returnOriginal:false}
+    )
+    return user.visualAccounts
 }
 
 const getTokenFromUser = async(token) => {
@@ -50,5 +67,6 @@ module.exports = {
     addAccount,
     getAccount,
     getAccounts,
-    deleteAccount
+    deleteAccount,
+    updateAccount
 }
