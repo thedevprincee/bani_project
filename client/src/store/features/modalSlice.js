@@ -12,10 +12,10 @@ const modalSlice = createSlice({
     reducers:{
         setBranchForm(state, action){
             return state = action.payload
-            return {...state, isModal: action.payload.isModel, 
-              modalType: action.payload.modalType, 
-              modelTitle: action.payload.modalTitle
-            }
+            // return {...state, isModal: action.payload.isModel, 
+            //   modalType: action.payload.modalType, 
+            //   modelTitle: action.payload.modalTitle
+            // }
         },
         
     }

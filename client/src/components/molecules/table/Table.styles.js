@@ -2,10 +2,11 @@ import styled from "styled-components"
 
 const TableWrapper = styled.div`
     width: 100%;
+    height: 50%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    overflow-x: auto;
+    overflow: auto;
     white-space: nowrap;
 `
 
@@ -21,6 +22,9 @@ export const THead = styled.thead`
 
 
 export const TBody = styled.tbody`
+    overflow-y: hidden;
+    border: 1px solid red;
+    
 `
 
 export const THeader = styled.th`
