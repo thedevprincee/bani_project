@@ -7,27 +7,48 @@ const addAccount = async (payload, token)=>{
     const user = await findUserById({_id: verifiedUser._id})
     const newAccount = await User.findOneAndUpdate(
         {_id: verifiedUser._id},
-        {$push: {visualAccounts: payload}},
+        {$push: {virtualAccounts: payload}},
         {returnOriginal: false}
     )
-    return payload
+
+    return newAccount.virtualAccounts
 }
 const getAccounts = async (token)=>{
     const verifiedUser = await getTokenFromUser(token)
     const user = await findUserById({_id: verifiedUser._id})
-    return user.visualAccounts
+    return user.virtualAccounts
 }
-const getAccount = async(visualId, token)=>{
+const getAccount = async(virtualId, token)=>{
     const verifiedUser = await getTokenFromUser(token)
     const user = await findUserById({_id: verifiedUser._id})
-    const account = user.visualAccounts.find(({_id})=>_id.toString() === visualId.toString() )
+    const account = user.virtualAccounts.find(({_id})=>_id.toString() === virtualId.toString() )
     return account
 }
-const deleteAccount = async(id, token)=>{
+const deleteAccount = async(virtualId, token)=>{
     const verifiedUser = await getTokenFromUser(token)
-    const user = await findUserById({_id: verifiedUser._id})
-    const account = user.visualAccounts.filter((account)=>account._id !== account.id )
-    return account
+        const user = await User.findOneAndUpdate(
+        {_id: verifiedUser._id}, 
+        {$pull: {virtualAccounts: {_id: virtualId}}}, 
+        {returnOriginal: false}
+    )
+    return user.virtualAccounts
+}
+
+const updateAccount = async(virtualId, token, payload)=>{
+    const verifiedUser = await getTokenFromUser(token)
+    const user = await User.findOneAndUpdate(
+        {
+            _id: verifiedUser._id
+        }, 
+        {$set: {"virtualAccounts.$[el1]": payload}},
+        {
+            arrayFilters:[
+                {"el1._id": virtualId}
+            ],
+            returnOriginal: false
+        } 
+    )
+    return user.virtualAccounts
 }
 
 const getTokenFromUser = async(token) => {
@@ -52,5 +73,6 @@ module.exports = {
     addAccount,
     getAccount,
     getAccounts,
-    deleteAccount
+    deleteAccount,
+    updateAccount
 }

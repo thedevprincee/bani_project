@@ -22,7 +22,7 @@ const UserSchema = Schema({
     //     name: String,
     //     location: String
     // },
-    visualAccounts: [
+    virtualAccounts: [
         {
             logo: {
                 type: String
